@@ -1,5 +1,4 @@
-# mathe-revision
-grade 8-9 math
+
 
 # Revisionsplan Mathe 8 → 9
 
