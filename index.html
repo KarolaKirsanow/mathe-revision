@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
 <title>Repetition · Matematik 8 → 9</title>
-<meta name="description" content="Reiner Revisionsplan Mathematik Klasse 8 → 9 (Lambacher Schweizer, Baden-Württemberg) mit Lehrerschmidt-Videos und Serlo-Übungen pro Kapitel.">
+<meta name="description" content="Reiner Revisionsplan Mathematik Klasse 8 → 9 (Lambacher Schweizer, Baden-Württemberg): Buch-Kapitel als Checkliste, mit Lehrerschmidt-Videos und Serlo-Übungen.">
 <meta property="og:title" content="Repetition · Matematik 8 → 9">
-<meta property="og:description" content="Wiederholung nach Kapiteln – Videos & Übungen pro Thema.">
+<meta property="og:description" content="Wiederholung nach Buch-Kapiteln – abhaken, ansehen, üben.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23232220'/%3E%3Ctext x='50' y='71' font-size='58' font-family='Georgia,serif' font-style='italic' fill='%23F2EFE9' text-anchor='middle'%3E%E2%88%9A%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,516 +44,411 @@
     padding:0 26px;
   }
 
+  /* cheetah print, very subtle */
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:0;
+    pointer-events:none;opacity:.5;
+    background-image:
+      radial-gradient(ellipse 7px 6px at 20% 22%,rgba(169,85,63,.07) 40%,transparent 44%),
+      radial-gradient(ellipse 6px 7px at 68% 14%,rgba(169,85,63,.06) 40%,transparent 44%),
+      radial-gradient(ellipse 6px 6px at 88% 40%,rgba(169,85,63,.06) 40%,transparent 44%),
+      radial-gradient(ellipse 7px 6px at 12% 66%,rgba(169,85,63,.06) 40%,transparent 44%),
+      radial-gradient(ellipse 6px 7px at 45% 80%,rgba(169,85,63,.06) 40%,transparent 44%),
+      radial-gradient(ellipse 6px 6px at 78% 74%,rgba(169,85,63,.07) 40%,transparent 44%);
+    background-size:340px 320px;
+  }
+  .wrap,header{position:relative;z-index:1}
+
   header{padding:64px 0 30px}
   .kicker{
-    display:flex;
-    align-items:center;
-    gap:12px;
+    display:flex;align-items:center;gap:12px;
     font-family:'DM Mono',monospace;
-    font-size:11.5px;
-    letter-spacing:.16em;
+    font-size:11.5px;letter-spacing:.16em;
     text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:26px;
+    color:var(--ink-soft);margin-bottom:26px;
   }
-  .kicker .dot{
-    width:7px;height:7px;
-    border-radius:50%;
-    background:var(--rost);
-    flex-shrink:0;
-  }
-  .kicker .rule{
-    flex:1;height:1px;
-    background:var(--line);
-  }
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--rost);flex-shrink:0}
+  .kicker .rule{flex:1;height:1px;background:var(--line)}
   h1{
     font-family:'Fraunces',Georgia,serif;
     font-weight:400;
     font-size:clamp(38px,8vw,62px);
-    line-height:1.02;
-    letter-spacing:-.02em;
+    line-height:1.02;letter-spacing:-.02em;
     margin-bottom:20px;
   }
   h1 em{font-style:italic;color:var(--rost)}
   h1 .arrow{
     font-family:'Space Grotesk',sans-serif;
-    font-weight:400;
-    color:var(--ink-soft);
-    font-size:.6em;
-    vertical-align:middle;
+    font-weight:400;color:var(--ink-soft);
+    font-size:.6em;vertical-align:middle;
   }
   .standfirst{
-    font-size:16.5px;
-    color:var(--ink-soft);
-    max-width:30em;
-    margin-bottom:34px;
+    font-size:16.5px;color:var(--ink-soft);
+    max-width:30em;margin-bottom:34px;
   }
   .facts{
-    display:flex;
-    flex-wrap:wrap;
+    display:flex;flex-wrap:wrap;
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
   }
   .fact{
-    flex:1;
-    min-width:120px;
+    flex:1;min-width:120px;
     padding:16px 20px 16px 0;
     border-right:1px solid var(--line);
   }
-  .fact:last-child{
-    border-right:none;
-    padding-right:0;
-  }
+  .fact:last-child{border-right:none;padding-right:0}
   .fact .n{
     font-family:'Fraunces',serif;
-    font-size:26px;
-    line-height:1;
-    display:block;
-    margin-bottom:5px;
+    font-size:26px;line-height:1;
+    display:block;margin-bottom:5px;
   }
   .fact .l{
     font-family:'DM Mono',monospace;
-    font-size:10.5px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
+    font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-soft);
   }
 
   .progress{
-    margin:38px 0 8px;
-    display:flex;
-    align-items:baseline;
-    gap:14px;
+    margin:38px 0 8px;display:flex;
+    align-items:baseline;gap:14px;
   }
   .progress .cap{
     font-family:'DM Mono',monospace;
-    font-size:11px;
-    letter-spacing:.14em;
+    font-size:11px;letter-spacing:.14em;
     text-transform:uppercase;
-    color:var(--ink-soft);
-    white-space:nowrap;
+    color:var(--ink-soft);white-space:nowrap;
   }
   .progress .pct{
     font-family:'Fraunces',serif;
-    font-size:20px;
-    margin-left:auto;
+    font-size:20px;margin-left:auto;
     font-variant-numeric:tabular-nums;
   }
   .track{
-    height:6px;
-    background:var(--paper-2);
-    border-radius:6px;
-    overflow:hidden;
+    height:6px;background:var(--paper-2);
+    border-radius:6px;overflow:hidden;
     margin-bottom:34px;
   }
   .track span{
-    display:block;height:100%;
-    width:0;
-    background:var(--sage);
-    border-radius:6px;
-    transition:width .4s
-      cubic-bezier(.4,0,.1,1);
+    display:block;height:100%;width:0;
+    background:var(--sage);border-radius:6px;
+    transition:width .4s cubic-bezier(.4,0,.1,1);
   }
 
   .note{
-    font-size:14px;
-    color:var(--ink-soft);
-    padding:18px 0 4px;
-    margin-bottom:26px;
+    font-size:14px;color:var(--ink-soft);
+    padding:18px 0 4px;margin-bottom:26px;
     border-top:1px dashed var(--line);
   }
   .note b{color:var(--ink);font-weight:600}
 
   .part{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin:44px 0 20px;
+    display:flex;align-items:baseline;
+    gap:14px;margin:44px 0 20px;
   }
   .part .idx{
     font-family:'DM Mono',monospace;
-    font-size:12px;
-    color:var(--rost);
+    font-size:12px;color:var(--rost);
     letter-spacing:.1em;
   }
   .part h2{
     font-family:'Fraunces',serif;
-    font-weight:400;
-    font-size:23px;
+    font-weight:400;font-size:23px;
     letter-spacing:-.01em;
   }
   .part .stampel{
     margin-left:auto;
     font-family:'DM Mono',monospace;
-    font-size:10px;
-    letter-spacing:.14em;
+    font-size:10px;letter-spacing:.14em;
     text-transform:uppercase;
-    padding:4px 11px;
-    border-radius:20px;
+    padding:4px 11px;border-radius:20px;
     border:1px solid var(--line);
     color:var(--ink-soft);
   }
-  .part .k9{
-    border-color:var(--rost);
-    color:var(--rost-deep);
-  }
+  .part .k9{border-color:var(--rost);color:var(--rost-deep)}
 
   .chapter{
     background:var(--card);
     border:1px solid var(--line);
-    border-radius:14px;
-    margin-bottom:12px;
+    border-radius:14px;margin-bottom:12px;
     overflow:hidden;
-    transition:border-color .2s,
-      box-shadow .2s;
+    transition:border-color .2s,box-shadow .2s;
   }
-  .chapter:hover{
-    box-shadow:0 8px 30px var(--shadow);
-  }
-  .chapter.done{
-    background:transparent;
-    border-color:var(--line);
-  }
+  .chapter:hover{box-shadow:0 8px 30px var(--shadow)}
+  .chapter.complete{border-color:var(--sage)}
   .chead{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    padding:18px 20px;
-    cursor:pointer;
+    display:flex;align-items:center;gap:16px;
+    padding:18px 20px;cursor:pointer;
     user-select:none;
   }
   .roman{
     font-family:'Fraunces',serif;
-    font-style:italic;
-    font-size:19px;
-    color:var(--ink-soft);
-    min-width:30px;
-    text-align:center;
-    flex-shrink:0;
+    font-style:italic;font-size:19px;
+    color:var(--ink-soft);min-width:24px;
+    text-align:center;flex-shrink:0;
   }
-  .chapter[data-grade="9"] .roman{
-    color:var(--rost);
-  }
+  .chapter[data-grade="9"] .roman{color:var(--rost)}
   .ctitle{flex:1;min-width:0}
   .ctitle h3{
-    font-size:16px;
-    font-weight:600;
-    letter-spacing:-.005em;
-    line-height:1.25;
+    font-size:16px;font-weight:600;
+    letter-spacing:-.005em;line-height:1.25;
   }
   .ctitle .sub{
-    font-size:12.5px;
-    color:var(--ink-soft);
+    font-size:12.5px;color:var(--ink-soft);
     margin-top:3px;
   }
-  .chapter.done .ctitle h3{
-    color:var(--ink-soft);
-    text-decoration:line-through;
-    text-decoration-color:var(--sage);
-    text-decoration-thickness:1.5px;
+  .cprog{
+    font-size:11px;color:var(--ink-soft);
+    font-variant-numeric:tabular-nums;
+    flex-shrink:0;letter-spacing:.04em;
   }
+  .chapter.complete .cprog{color:var(--sage-deep)}
   .chev{
-    color:var(--ink-soft);
-    font-size:11px;
-    transition:transform .25s;
-    flex-shrink:0;
+    color:var(--ink-soft);font-size:11px;
+    transition:transform .25s;flex-shrink:0;
     font-family:'DM Mono',monospace;
   }
-  .chapter.open .chev{
-    transform:rotate(90deg);
+  .chapter.open .chev{transform:rotate(90deg)}
+
+  .cbody{
+    max-height:0;overflow:hidden;
+    transition:max-height .35s cubic-bezier(.4,0,.1,1);
   }
-  .check{
-    width:26px;height:26px;
-    border-radius:50%;
+  .chapter.open .cbody{max-height:2600px}
+  .cbody-inner{padding:0 20px 20px}
+
+  /* ---- checklist ---- */
+  .checklist{
+    border-top:1px solid var(--paper-2);
+    margin-bottom:6px;
+  }
+  label.item{
+    display:flex;align-items:flex-start;
+    gap:12px;padding:11px 4px;cursor:pointer;
+    border-bottom:1px solid var(--paper-2);
+  }
+  label.item:last-child{border-bottom:none}
+  label.item input{
+    position:absolute;opacity:0;
+    width:0;height:0;
+  }
+  .tick{
+    width:20px;height:20px;flex-shrink:0;
     border:1.5px solid var(--line);
-    background:var(--paper);
-    flex-shrink:0;cursor:pointer;
-    position:relative;
-    transition:all .18s;
+    border-radius:6px;background:var(--paper);
+    position:relative;margin-top:1px;
+    transition:all .16s;
   }
-  .check:hover{border-color:var(--sage)}
-  .chapter.done .check{
+  label.item:hover .tick{border-color:var(--sage)}
+  input:checked ~ .tick{
     background:var(--sage);
     border-color:var(--sage);
   }
-  .chapter.done .check::after{
-    content:"";
-    position:absolute;
-    left:9px;top:5px;
-    width:5px;height:10px;
+  input:checked ~ .tick::after{
+    content:"";position:absolute;
+    left:6.5px;top:3px;width:4px;height:8px;
     border:solid var(--card);
     border-width:0 2px 2px 0;
     transform:rotate(42deg);
   }
-
-  .vids{
-    max-height:0;overflow:hidden;
-    transition:max-height .32s
-      cubic-bezier(.4,0,.1,1);
+  input:focus-visible ~ .tick{
+    outline:2px solid var(--rost);
+    outline-offset:2px;
   }
-  .chapter.open .vids{max-height:1400px}
-  .vids-inner{padding:2px 20px 20px 66px}
-  .vids-inner .lead{
-    font-family:'DM Mono',monospace;
-    font-size:10.5px;
-    letter-spacing:.1em;
-    text-transform:uppercase;
+  .it-text{
+    flex:1;font-size:14px;line-height:1.4;
+    padding-top:1px;
+  }
+  input:checked ~ .it-text{
     color:var(--ink-soft);
-    margin-bottom:10px;
+    text-decoration:line-through;
+    text-decoration-color:var(--sage);
+  }
+  .pnum{
+    font-family:'DM Mono',monospace;
+    font-size:10.5px;color:var(--ink-soft);
+    flex-shrink:0;padding-top:2px;
+    letter-spacing:.03em;
+  }
+
+  /* ---- Klassenarbeit / Training box ---- */
+  label.item.training{
+    margin-top:8px;
+    background:rgba(197,107,84,.07);
+    border:1px solid rgba(197,107,84,.28);
+    border-radius:10px;padding:13px 12px;
+  }
+  label.item.training .it-text{
+    font-weight:700;color:var(--rost-deep);
+    font-size:14px;letter-spacing:.01em;
+  }
+  label.item.training .tick{
+    border-color:var(--rost);
+    border-radius:50%;
+  }
+  label.item.training:hover .tick{border-color:var(--rost-deep)}
+  label.item.training input:checked ~ .tick{
+    background:var(--rost);border-color:var(--rost);
+  }
+  label.item.training input:checked ~ .it-text{
+    color:var(--rost);
+    text-decoration-color:var(--rost);
+    opacity:.7;
+  }
+  label.item.training .pnum{color:var(--rost-deep)}
+
+  /* ---- resources ---- */
+  .res{
+    margin-top:16px;padding-top:14px;
+    border-top:1px dashed var(--line);
+  }
+  .res .lead{
+    font-family:'DM Mono',monospace;
+    font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:10px;
   }
   a.vid{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:9px 0;
-    text-decoration:none;
-    color:var(--ink);
-    font-size:14.5px;
+    display:flex;align-items:center;gap:12px;
+    padding:9px 0;text-decoration:none;
+    color:var(--ink);font-size:14.5px;
     border-bottom:1px solid var(--paper-2);
-    transition:padding-left .18s,
-      color .18s;
+    transition:padding-left .18s,color .18s;
   }
-  a.vid:last-of-type{border-bottom:none}
-  a.vid:hover{
-    padding-left:6px;
-    color:var(--rost-deep);
-  }
+  a.vid:hover{padding-left:6px;color:var(--rost-deep)}
   a.vid .play{
-    width:24px;height:24px;
-    border-radius:50%;
-    background:var(--ink);
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:background .18s;
+    width:24px;height:24px;border-radius:50%;
+    background:var(--ink);flex-shrink:0;
+    display:flex;align-items:center;
+    justify-content:center;transition:background .18s;
   }
   a.vid:hover .play{background:var(--rost)}
   a.vid .play::after{
-    content:"";
-    border-style:solid;
+    content:"";border-style:solid;
     border-width:4px 0 4px 7px;
-    border-color:transparent
-      transparent transparent
-      var(--paper);
+    border-color:transparent transparent transparent var(--paper);
     margin-left:2px;
   }
   a.vid .t{flex:1}
   a.vid .hub{
     font-family:'DM Mono',monospace;
-    font-size:9.5px;
-    letter-spacing:.1em;
-    color:var(--ink-soft);
-    text-transform:uppercase;
+    font-size:9.5px;letter-spacing:.1em;
+    color:var(--ink-soft);text-transform:uppercase;
   }
   .playlist-link{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-top:12px;
-    font-size:13px;
-    font-weight:500;
-    color:var(--ink);
+    display:inline-flex;align-items:center;
+    gap:8px;margin-top:12px;font-size:13px;
+    font-weight:500;color:var(--ink);
     text-decoration:none;
     border-bottom:1.5px solid var(--rost);
     padding-bottom:1px;
   }
   .playlist-link:hover{color:var(--rost-deep)}
-
+  .hinweis{
+    font-size:12.5px;color:var(--ink-soft);
+    margin-top:12px;font-style:italic;
+  }
   .serlo-row{
-    margin-top:16px;
-    padding-top:14px;
+    margin-top:16px;padding-top:14px;
     border-top:1px dashed var(--line);
   }
   .serlo-row .lead{margin-bottom:8px}
   a.serlo{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    margin:3px 14px 3px 0;
-    font-size:13px;
-    font-weight:500;
-    color:var(--ink);
-    text-decoration:none;
+    display:inline-flex;align-items:center;
+    gap:9px;margin:3px 14px 3px 0;
+    font-size:13px;font-weight:500;
+    color:var(--ink);text-decoration:none;
   }
   a.serlo:hover{color:var(--sage-deep)}
   a.serlo .s{
     font-family:'DM Mono',monospace;
-    background:var(--sage);
-    color:var(--card);
-    font-size:9px;
-    font-weight:500;
-    letter-spacing:.08em;
-    padding:3px 6px;
+    background:var(--sage);color:var(--card);
+    font-size:9px;font-weight:500;
+    letter-spacing:.08em;padding:3px 6px;
     border-radius:5px;
   }
 
   footer{
-    margin-top:56px;
-    padding-top:26px;
+    margin-top:56px;padding-top:26px;
     border-top:1px solid var(--line);
-    color:var(--ink-soft);
-    font-size:12.5px;
+    color:var(--ink-soft);font-size:12.5px;
   }
   footer .colophon{
     font-family:'DM Mono',monospace;
-    font-size:10.5px;
-    letter-spacing:.08em;
+    font-size:10.5px;letter-spacing:.08em;
     line-height:1.9;
   }
   footer .sign{
     font-family:'Fraunces',serif;
-    font-style:italic;
-    font-size:15px;
-    color:var(--ink);
-    margin-top:14px;
+    font-style:italic;font-size:15px;
+    color:var(--ink);margin-top:14px;
   }
   .reset{
-    background:none;
-    border:1px solid var(--line);
+    background:none;border:1px solid var(--line);
     color:var(--ink-soft);
     font-family:'DM Mono',monospace;
-    font-size:11px;
-    letter-spacing:.08em;
+    font-size:11px;letter-spacing:.08em;
     text-transform:uppercase;
-    padding:8px 16px;
-    border-radius:22px;
-    cursor:pointer;
-    margin-top:20px;
+    padding:8px 16px;border-radius:22px;
+    cursor:pointer;margin-top:20px;
     transition:all .18s;
   }
-  .reset:hover{
-    border-color:var(--rost);
-    color:var(--rost-deep);
-  }
+  .reset:hover{border-color:var(--rost);color:var(--rost-deep)}
 
-  /* ---- cheetah print, very subtle ---- */
-  /* drawn as layered radial dots on the
-     paper, low opacity so it whispers */
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    opacity:.5;
-    background-image:
-      radial-gradient(
-        ellipse 7px 6px at 20% 22%,
-        rgba(169,85,63,.07) 40%,
-        transparent 44%),
-      radial-gradient(
-        ellipse 6px 7px at 68% 14%,
-        rgba(169,85,63,.06) 40%,
-        transparent 44%),
-      radial-gradient(
-        ellipse 6px 6px at 88% 40%,
-        rgba(169,85,63,.06) 40%,
-        transparent 44%),
-      radial-gradient(
-        ellipse 7px 6px at 12% 66%,
-        rgba(169,85,63,.06) 40%,
-        transparent 44%),
-      radial-gradient(
-        ellipse 6px 7px at 45% 80%,
-        rgba(169,85,63,.06) 40%,
-        transparent 44%),
-      radial-gradient(
-        ellipse 6px 6px at 78% 74%,
-        rgba(169,85,63,.07) 40%,
-        transparent 44%);
-    background-size:340px 320px;
-  }
-  .wrap,header{position:relative;z-index:1}
-
-  /* ---- mascot ---- */
+  /* mascot */
   .mascot-wrap{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-    z-index:40;
-    display:flex;
-    align-items:flex-end;
-    gap:12px;
+    position:fixed;right:22px;bottom:22px;
+    z-index:40;display:flex;
+    align-items:flex-end;gap:12px;
     pointer-events:none;
   }
   .mascot-bubble{
-    background:var(--ink);
-    color:var(--paper);
-    font-size:13px;
-    line-height:1.35;
+    background:var(--ink);color:var(--paper);
+    font-size:13px;line-height:1.35;
     padding:11px 14px;
     border-radius:14px 14px 4px 14px;
     max-width:190px;
-    box-shadow:0 8px 24px
-      rgba(35,34,32,.18);
-    opacity:0;
-    transform:translateY(6px)
-      scale(.96);
-    transition:opacity .3s,
-      transform .3s;
+    box-shadow:0 8px 24px rgba(35,34,32,.18);
+    opacity:0;transform:translateY(6px) scale(.96);
+    transition:opacity .3s,transform .3s;
   }
-  .mascot-bubble.show{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
+  .mascot-bubble.show{opacity:1;transform:translateY(0) scale(1)}
   .mascot-bubble .mono-mini{
     font-family:'DM Mono',monospace;
-    font-size:9px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:var(--sage);
-    display:block;
-    margin-bottom:3px;
+    font-size:9px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--sage);
+    display:block;margin-bottom:3px;
   }
   .mascot{
-    width:76px;
-    height:76px;
-    flex-shrink:0;
-    cursor:pointer;
-    pointer-events:auto;
+    width:76px;height:76px;flex-shrink:0;
+    cursor:pointer;pointer-events:auto;
     transform-origin:bottom center;
     transition:transform .2s;
-    filter:drop-shadow(0 6px 12px
-      rgba(35,34,32,.16));
+    filter:drop-shadow(0 6px 12px rgba(35,34,32,.16));
   }
   .mascot:hover{transform:scale(1.06)}
-  .mascot.cheer{
-    animation:cheer .55s
-      cubic-bezier(.3,1.4,.5,1);
-  }
+  .mascot.cheer{animation:cheer .55s cubic-bezier(.3,1.4,.5,1)}
   @keyframes cheer{
     0%{transform:translateY(0) rotate(0)}
-    30%{transform:translateY(-14px)
-      rotate(-6deg)}
-    55%{transform:translateY(0)
-      rotate(4deg)}
-    75%{transform:translateY(-5px)
-      rotate(-2deg)}
-    100%{transform:translateY(0)
-      rotate(0)}
+    30%{transform:translateY(-14px) rotate(-6deg)}
+    55%{transform:translateY(0) rotate(4deg)}
+    75%{transform:translateY(-5px) rotate(-2deg)}
+    100%{transform:translateY(0) rotate(0)}
   }
   @media (max-width:520px){
     .mascot{width:60px;height:60px}
-    .mascot-bubble{max-width:150px;
-      font-size:12px}
+    .mascot-bubble{max-width:150px;font-size:12px}
     .mascot-wrap{right:14px;bottom:14px}
+    .cbody-inner{padding-left:14px;padding-right:14px}
   }
 
   *:focus-visible{
     outline:2px solid var(--rost);
-    outline-offset:3px;
-    border-radius:3px;
+    outline-offset:3px;border-radius:3px;
   }
   @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;
-      scroll-behavior:auto!important}
-  }
-  @media (max-width:520px){
-    .vids-inner{padding-left:20px}
-    .fact{border-right:none;
-      padding-right:0}
-    header{padding-top:44px}
+    *{transition:none!important;scroll-behavior:auto!important}
+    .mascot.cheer{animation:none}
   }
 </style>
 </head>
@@ -571,15 +467,14 @@
       <span class="arrow">→</span>
       <em>9</em></h1>
     <p class="standfirst">Reine
-      Wiederholung, ordentlich nach
-      Kapiteln sortiert. Ein Video zum
-      Auffrischen, ein paar Aufgaben zum
-      Festigen, ein Haken zur Belohnung.
-      Mehr braucht es nicht.</p>
+      Wiederholung, Kapitel für Kapitel
+      nach dem Schulbuch. Jedes Unterthema
+      zum Abhaken, jede Klassenarbeit extra
+      markiert. Ansehen, üben, abhaken.</p>
     <div class="facts">
       <div class="fact">
-        <span class="n">2–3</span>
-        <span class="l">Wochen</span>
+        <span class="n">66</span>
+        <span class="l">zum Abhaken</span>
       </div>
       <div class="fact">
         <span class="n">9</span>
@@ -599,18 +494,16 @@
       Fortschritt</span>
     <span class="pct" id="pctval">0%</span>
   </div>
-  <div class="track">
-    <span id="barfill"></span>
-  </div>
+  <div class="track"><span id="barfill"></span></div>
 
   <div class="note">
-    <b>So geht's:</b> Ein Kapitel pro Tag.
-    Lehrerschmidt zum Ansehen, Serlo (grün)
-    zum Üben, dazu die „Klassenarbeiten zum
-    Üben“ aus dem Trainer. Tipp aufs Kapitel
-    für die Links, aufs Kästchen wenn's
-    sitzt. Dein Fortschritt bleibt im Browser
-    gespeichert — auch morgen noch.
+    <b>So geht's:</b> Tipp auf ein Kapitel,
+    um seine Unterthemen zu sehen. Jedes
+    Kästchen ist ein Buchabschnitt — hak ihn
+    ab, wenn er sitzt. Die farbige, fett
+    umrandete <b>Klassenarbeit</b> pro Kapitel
+    ist deine Übungsarbeit zum Schluss. Alles
+    bleibt im Browser gespeichert.
   </div>
 
   <div class="part">
@@ -618,82 +511,322 @@
     <h2>Grundlagen, Klasse 8</h2>
     <span class="stampel">Klasse 8</span>
   </div>
-
-  <div class="chapter" data-grade="8" data-id="t1">
+  <div class="chapter" data-grade="8" data-chapter="g" data-count="7">
     <div class="chead">
-      <div class="check"></div>
+      <div class="roman">·</div>
+      <div class="ctitle"><h3>Training Grundwissen</h3><div class="sub">Wiederholung aus Klasse 7</div></div>
+      <div class="cprog mono" data-cprog="g">0/7</div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="g1">
+          <span class="tick"></span>
+          <span class="it-text">Zahlterme – Terme mit einer Variablen</span>
+          <span class="pnum">S. 4</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="g2">
+          <span class="tick"></span>
+          <span class="it-text">Geometrische Figuren konstruieren – Ortslinien</span>
+          <span class="pnum">S. 5</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="g3">
+          <span class="tick"></span>
+          <span class="it-text">Lineare Funktionen</span>
+          <span class="pnum">S. 6</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="g4">
+          <span class="tick"></span>
+          <span class="it-text">Lineare Gleichungen</span>
+          <span class="pnum">S. 7</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="g5">
+          <span class="tick"></span>
+          <span class="it-text">Geometrische Sätze – Begründen in der Geometrie</span>
+          <span class="pnum">S. 8</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="g6">
+          <span class="tick"></span>
+          <span class="it-text">Prozentrechnung – Zinsrechnung</span>
+          <span class="pnum">S. 9</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="g7">
+          <span class="tick"></span>
+          <span class="it-text">Daten auswerten</span>
+          <span class="pnum">S. 9</span>
+        </label>
+
+      </div>
+
+    </div></div>
+  </div>
+  <div class="chapter" data-grade="8" data-chapter="t1" data-count="6">
+    <div class="chead">
       <div class="roman">I</div>
-      <div class="ctitle"><h3>Terme mit mehreren Variablen</h3><div class="sub">Aufstellen, vereinfachen, ausmultiplizieren, binomische Formeln</div></div>
+      <div class="ctitle"><h3>Terme mit mehreren Variablen</h3><div class="sub">Vereinfachen, multiplizieren, binomische Formeln</div></div>
+      <div class="cprog mono" data-cprog="t1">0/6</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Auffrischung Terme &amp; binomische Formeln</div>
-      <a class="vid" href="https://youtu.be/jiIii_3DwUw" target="_blank" rel="noopener"><span class="play"></span><span class="t">1. binomische Formel</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/893B6WSN9bw" target="_blank" rel="noopener"><span class="play"></span><span class="t">2. binomische Formel</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/Nkhd670URpo" target="_blank" rel="noopener"><span class="play"></span><span class="t">3. binomische Formel</span><span class="hub">YouTube</span></a>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/terme-und-gleichungen/" target="_blank" rel="noopener">Alle Term-Videos (Playlist)</a>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/terme-gleichungen/terme-variablen/binomische-formeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Binomische Formeln – Artikel &amp; Aufgaben</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="t1a">
+          <span class="tick"></span>
+          <span class="it-text">Terme mit mehreren Variablen</span>
+          <span class="pnum">S. 10</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t1b">
+          <span class="tick"></span>
+          <span class="it-text">Vereinfachen von Summen und Produkten</span>
+          <span class="pnum">S. 11</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t1c">
+          <span class="tick"></span>
+          <span class="it-text">Multiplizieren von Summen</span>
+          <span class="pnum">S. 12</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t1d">
+          <span class="tick"></span>
+          <span class="it-text">Binomische Formeln</span>
+          <span class="pnum">S. 13</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t1e">
+          <span class="tick"></span>
+          <span class="it-text">Formeln nach Variablen auflösen</span>
+          <span class="pnum">S. 14</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t1T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 15</span>
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Auffrischung Terme &amp; binomische Formeln</div>
+        <a class="vid" href="https://youtu.be/jiIii_3DwUw" target="_blank" rel="noopener"><span class="play"></span><span class="t">1. binomische Formel</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/893B6WSN9bw" target="_blank" rel="noopener"><span class="play"></span><span class="t">2. binomische Formel</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/Nkhd670URpo" target="_blank" rel="noopener"><span class="play"></span><span class="t">3. binomische Formel</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/terme-und-gleichungen/" target="_blank" rel="noopener">Alle Term-Videos (Playlist)</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/terme-gleichungen/terme-variablen/binomische-formeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Binomische Formeln – Artikel &amp; Aufgaben</a>
+          </div>
+        </div>
     </div></div>
   </div>
-
-  <div class="chapter" data-grade="8" data-id="t2">
+  <div class="chapter" data-grade="8" data-chapter="t2" data-count="8">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">II</div>
-      <div class="ctitle"><h3>Zufall und Wahrscheinlichkeit</h3><div class="sub">Produkt- &amp; Summenregel, Baumdiagramme, Laplace, Kombinatorik</div></div>
+      <div class="ctitle"><h3>Zufall und Wahrscheinlichkeit</h3><div class="sub">Produkt- &amp; Summenregel, Baumdiagramme, Laplace</div></div>
+      <div class="cprog mono" data-cprog="t2">0/8</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Wahrscheinlichkeit &amp; Baumdiagramme</div>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/daten-und-zufall-wahrscheinlichkeit/" target="_blank" rel="noopener">Playlist „Daten und Zufall – Wahrscheinlichkeit“</a>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/16365/berechnung-von-wahrscheinlichkeiten" target="_blank" rel="noopener"><span class="s">SERLO</span>Berechnung von Wahrscheinlichkeiten</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="t2a">
+          <span class="tick"></span>
+          <span class="it-text">Zufallsexperimente – Wahrscheinlichkeiten</span>
+          <span class="pnum">S. 17</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t2b">
+          <span class="tick"></span>
+          <span class="it-text">Versuchsreihen ergeben Wahrscheinlichkeiten</span>
+          <span class="pnum">S. 18</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t2c">
+          <span class="tick"></span>
+          <span class="it-text">Mehrstufige Zufallsexperimente – Produktregel</span>
+          <span class="pnum">S. 19</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t2d">
+          <span class="tick"></span>
+          <span class="it-text">Ereignisse – Summenregel</span>
+          <span class="pnum">S. 20</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t2e">
+          <span class="tick"></span>
+          <span class="it-text">Der richtige Blick aufs Baumdiagramm</span>
+          <span class="pnum">S. 21</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t2f">
+          <span class="tick"></span>
+          <span class="it-text">Wahrscheinlichkeit bei Laplace-Experimenten</span>
+          <span class="pnum">S. 22</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t2g">
+          <span class="tick"></span>
+          <span class="it-text">Kombinatorische Hilfsmittel</span>
+          <span class="pnum">S. 23</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t2T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 24</span>
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Wahrscheinlichkeit &amp; Baumdiagramme</div>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/daten-und-zufall-wahrscheinlichkeit/" target="_blank" rel="noopener">Playlist „Daten und Zufall – Wahrscheinlichkeit“</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/16365/berechnung-von-wahrscheinlichkeiten" target="_blank" rel="noopener"><span class="s">SERLO</span>Berechnung von Wahrscheinlichkeiten</a>
+          </div>
+        </div>
     </div></div>
   </div>
-
-  <div class="chapter" data-grade="8" data-id="t3">
+  <div class="chapter" data-grade="8" data-chapter="t3" data-count="7">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">III</div>
-      <div class="ctitle"><h3>Reelle Zahlen</h3><div class="sub">Quadratwurzeln, Rechenregeln, teilweise Wurzel ziehen, Kubikwurzeln</div></div>
+      <div class="ctitle"><h3>Reelle Zahlen</h3><div class="sub">Quadratwurzeln, Rechenregeln, Kubikwurzel</div></div>
+      <div class="cprog mono" data-cprog="t3">0/7</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Wurzelrechnung Schritt für Schritt</div>
-      <a class="vid" href="https://www.youtube.com/watch?v=JcqhQqejn5Y" target="_blank" rel="noopener"><span class="play"></span><span class="t">Wurzeln faktorisieren (teilweise Wurzel ziehen)</span><span class="hub">YouTube</span></a>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/potenz-und-wurzelrechnung/" target="_blank" rel="noopener">Playlist „Potenz- und Wurzelrechnung“</a>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/16360/potenzen-und-wurzeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Potenzen und Wurzeln – Übersicht</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="t3a">
+          <span class="tick"></span>
+          <span class="it-text">Quadratwurzeln</span>
+          <span class="pnum">S. 26</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t3b">
+          <span class="tick"></span>
+          <span class="it-text">Näherungsweises Berechnen von Quadratwurzeln</span>
+          <span class="pnum">S. 27</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t3c">
+          <span class="tick"></span>
+          <span class="it-text">Reelle Zahlen</span>
+          <span class="pnum">S. 28</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t3d">
+          <span class="tick"></span>
+          <span class="it-text">Rechenregeln für Quadratwurzeln</span>
+          <span class="pnum">S. 29</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t3e">
+          <span class="tick"></span>
+          <span class="it-text">Teilweises Wurzelziehen</span>
+          <span class="pnum">S. 30</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t3f">
+          <span class="tick"></span>
+          <span class="it-text">Kubikwurzel</span>
+          <span class="pnum">S. 31</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t3T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 32</span>
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Wurzelrechnung Schritt für Schritt</div>
+        <a class="vid" href="https://www.youtube.com/watch?v=JcqhQqejn5Y" target="_blank" rel="noopener"><span class="play"></span><span class="t">Wurzeln faktorisieren (teilweise Wurzel ziehen)</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/potenz-und-wurzelrechnung/" target="_blank" rel="noopener">Playlist „Potenz- und Wurzelrechnung“</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/16360/potenzen-und-wurzeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Potenzen und Wurzeln – Übersicht</a>
+          </div>
+        </div>
     </div></div>
   </div>
-
-  <div class="chapter" data-grade="8" data-id="t4">
+  <div class="chapter" data-grade="8" data-chapter="t4" data-count="7">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">IV</div>
-      <div class="ctitle"><h3>Quadratische Funktionen</h3><div class="sub">Normalparabel, verschieben, strecken, Scheitelform, modellieren</div></div>
+      <div class="ctitle"><h3>Quadratische Funktionen</h3><div class="sub">Normalparabel, verschieben, strecken, Scheitelform</div></div>
+      <div class="cprog mono" data-cprog="t4">0/7</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Parabeln zeichnen und verstehen</div>
-      <a class="vid" href="https://youtu.be/ggtEEE_xgd0" target="_blank" rel="noopener"><span class="play"></span><span class="t">Normalparabel y=x² mit Wertetabelle</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/XBLrXimmTUM" target="_blank" rel="noopener"><span class="play"></span><span class="t">y=2x² und y=½x² – strecken &amp; stauchen</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/a7wlE6D2Pf4" target="_blank" rel="noopener"><span class="play"></span><span class="t">Parabel auf der x-Achse verschieben</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/J6pEEA7B9-g" target="_blank" rel="noopener"><span class="play"></span><span class="t">Scheitelpunkt bestimmen &amp; ablesen</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/0DXjdwpJ3S0" target="_blank" rel="noopener"><span class="play"></span><span class="t">Quadratische Ergänzung → Scheitelpunktform</span><span class="hub">YouTube</span></a>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/quadratische-funktionen/" target="_blank" rel="noopener">Alle Parabel-Videos (Playlist)</a>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/1348/quadratische-funktionen-parabeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Quadratische Funktionen – Parabeln</a>
-        <a class="serlo" href="https://de.serlo.org/mathe/1631/quadratische-ergaenzung" target="_blank" rel="noopener"><span class="s">SERLO</span>Quadratische Ergänzung → Scheitelform</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="t4a">
+          <span class="tick"></span>
+          <span class="it-text">Die Normalparabel y = x²</span>
+          <span class="pnum">S. 34</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t4b">
+          <span class="tick"></span>
+          <span class="it-text">Normalparabeln im Koordinatensystem verschieben</span>
+          <span class="pnum">S. 34</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t4c">
+          <span class="tick"></span>
+          <span class="it-text">Die Normalparabel parallel zur y-Achse strecken</span>
+          <span class="pnum">S. 35</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t4d">
+          <span class="tick"></span>
+          <span class="it-text">Die Scheitelform der Parabelgleichung</span>
+          <span class="pnum">S. 36</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t4e">
+          <span class="tick"></span>
+          <span class="it-text">Quadratische Funktionen</span>
+          <span class="pnum">S. 37</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t4f">
+          <span class="tick"></span>
+          <span class="it-text">Bestimmung größter und kleinster Werte</span>
+          <span class="pnum">S. 38</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t4T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 39</span>
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Parabeln zeichnen und verstehen</div>
+        <a class="vid" href="https://youtu.be/ggtEEE_xgd0" target="_blank" rel="noopener"><span class="play"></span><span class="t">Normalparabel y=x² mit Wertetabelle</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/XBLrXimmTUM" target="_blank" rel="noopener"><span class="play"></span><span class="t">y=2x² und y=½x² – strecken &amp; stauchen</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/a7wlE6D2Pf4" target="_blank" rel="noopener"><span class="play"></span><span class="t">Parabel auf der x-Achse verschieben</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/J6pEEA7B9-g" target="_blank" rel="noopener"><span class="play"></span><span class="t">Scheitelpunkt bestimmen &amp; ablesen</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/0DXjdwpJ3S0" target="_blank" rel="noopener"><span class="play"></span><span class="t">Quadratische Ergänzung → Scheitelpunktform</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/quadratische-funktionen/" target="_blank" rel="noopener">Alle Parabel-Videos (Playlist)</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/1348/quadratische-funktionen-parabeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Quadratische Funktionen – Parabeln</a>
+          <a class="serlo" href="https://de.serlo.org/mathe/1631/quadratische-ergaenzung" target="_blank" rel="noopener"><span class="s">SERLO</span>Quadratische Ergänzung → Scheitelform</a>
+          </div>
+        </div>
     </div></div>
   </div>
 
@@ -702,62 +835,193 @@
     <h2>Geometrie &amp; Gleichungen</h2>
     <span class="stampel">Klasse 8</span>
   </div>
-
-  <div class="chapter" data-grade="8" data-id="t5">
+  <div class="chapter" data-grade="8" data-chapter="t5" data-count="7">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">V</div>
-      <div class="ctitle"><h3>Strahlensätze</h3><div class="sub">Zentrische Streckung, 1. &amp; 2. Strahlensatz, im Raum</div></div>
+      <div class="ctitle"><h3>Strahlensätze</h3><div class="sub">Zentrische Streckung, 1. &amp; 2. Strahlensatz</div></div>
+      <div class="cprog mono" data-cprog="t5">0/7</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Ähnlichkeit &amp; Strahlensätze</div>
-      <a class="vid" href="https://www.youtube.com/watch?v=Sm8DnMbQD00" target="_blank" rel="noopener"><span class="play"></span><span class="t">Ähnlichkeit von Dreiecken</span><span class="hub">YouTube</span></a>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/geometrie/" target="_blank" rel="noopener">Geometrie-Playlist: Strahlensatz, zentrisches Strecken, Ähnlichkeit</a>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/167486/aufgaben-zu-kongruenz-und-aehnlichkeit-von-dreiecken" target="_blank" rel="noopener"><span class="s">SERLO</span>Aufgaben zu Ähnlichkeit von Dreiecken</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="t5a">
+          <span class="tick"></span>
+          <span class="it-text">Vergrößern und Verkleinern – Streckenverhältnis</span>
+          <span class="pnum">S. 42</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t5b">
+          <span class="tick"></span>
+          <span class="it-text">Bruchgleichungen</span>
+          <span class="pnum">S. 42</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t5c">
+          <span class="tick"></span>
+          <span class="it-text">Die zentrische Streckung</span>
+          <span class="pnum">S. 43</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t5d">
+          <span class="tick"></span>
+          <span class="it-text">Der erste Strahlensatz</span>
+          <span class="pnum">S. 44</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t5e">
+          <span class="tick"></span>
+          <span class="it-text">Der zweite Strahlensatz</span>
+          <span class="pnum">S. 45</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t5f">
+          <span class="tick"></span>
+          <span class="it-text">Strahlensätze bei Körpern</span>
+          <span class="pnum">S. 46</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t5T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 48</span>
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Ähnlichkeit &amp; Strahlensätze</div>
+        <a class="vid" href="https://www.youtube.com/watch?v=Sm8DnMbQD00" target="_blank" rel="noopener"><span class="play"></span><span class="t">Ähnlichkeit von Dreiecken</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/geometrie/" target="_blank" rel="noopener">Geometrie-Playlist: Strahlensatz, zentrisches Strecken</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/167486/aufgaben-zu-kongruenz-und-aehnlichkeit-von-dreiecken" target="_blank" rel="noopener"><span class="s">SERLO</span>Aufgaben zu Ähnlichkeit von Dreiecken</a>
+          </div>
+        </div>
     </div></div>
   </div>
-
-  <div class="chapter" data-grade="8" data-id="t6">
+  <div class="chapter" data-grade="8" data-chapter="t6" data-count="9">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">VI</div>
-      <div class="ctitle"><h3>Quadratische Gleichungen</h3><div class="sub">ax²+bx=0, (x−d)²+e=0, Lösungsformel, Linearfaktoren</div></div>
+      <div class="ctitle"><h3>Quadratische Gleichungen</h3><div class="sub">Lösungsformel, Linearfaktoren, Ungleichungen</div></div>
+      <div class="cprog mono" data-cprog="t6">0/9</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Von der Gleichung zur Lösung</div>
-      <a class="vid" href="https://youtu.be/MA3Gma66Jvw" target="_blank" rel="noopener"><span class="play"></span><span class="t">Nullstellen berechnen</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/EwITpDN5W1w" target="_blank" rel="noopener"><span class="play"></span><span class="t">PQ-Formel – Nullstellen berechnen</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/aGmxlKRxT8w" target="_blank" rel="noopener"><span class="play"></span><span class="t">PQ-Formel – schwierige Aufgaben</span><span class="hub">YouTube</span></a>
-      <a class="vid" href="https://youtu.be/kJY93AiBMvY" target="_blank" rel="noopener"><span class="play"></span><span class="t">Satz von Vieta</span><span class="hub">YouTube</span></a>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/quadratische-funktionen/" target="_blank" rel="noopener">Playlist quadratische Gleichungen</a>
-      <div class="lead" style="margin-top:12px;text-transform:none;letter-spacing:0;font-family:'Space Grotesk',sans-serif;font-size:12.5px">Hinweis: Der Trainer nutzt die Mitternachtsformel; Lehrerschmidt erklärt die gleichwertige PQ-Formel.</div>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo (Mitternachtsformel wie im Trainer)</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/1549/mitternachtsformel-quadratische-loesungsformel" target="_blank" rel="noopener"><span class="s">SERLO</span>Mitternachtsformel – erklärt &amp; hergeleitet</a>
-        <a class="serlo" href="https://de.serlo.org/mathe/16242/quadratische-gleichungen" target="_blank" rel="noopener"><span class="s">SERLO</span>Quadratische Gleichungen – Aufgaben</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="t6a">
+          <span class="tick"></span>
+          <span class="it-text">Rein quadratische Gleichungen</span>
+          <span class="pnum">S. 50</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t6b">
+          <span class="tick"></span>
+          <span class="it-text">Gleichungen der Form a·x² + b·x = 0</span>
+          <span class="pnum">S. 51</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t6c">
+          <span class="tick"></span>
+          <span class="it-text">Gleichungen der Form a·(x − d)² + e = 0</span>
+          <span class="pnum">S. 52</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t6d">
+          <span class="tick"></span>
+          <span class="it-text">Lösungsformel für quadratische Gleichungen (1)</span>
+          <span class="pnum">S. 53</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t6e">
+          <span class="tick"></span>
+          <span class="it-text">Lösungsformel für quadratische Gleichungen (2)</span>
+          <span class="pnum">S. 54</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t6f">
+          <span class="tick"></span>
+          <span class="it-text">Linearfaktordarstellung quadratischer Funktionen</span>
+          <span class="pnum">S. 55</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t6g">
+          <span class="tick"></span>
+          <span class="it-text">Bruchgleichungen und quadratische Gleichungen</span>
+          <span class="pnum">S. 56</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t6h">
+          <span class="tick"></span>
+          <span class="it-text">Quadratische Ungleichungen</span>
+          <span class="pnum">S. 57</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t6T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 58</span>
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Von der Gleichung zur Lösung</div>
+        <a class="vid" href="https://youtu.be/MA3Gma66Jvw" target="_blank" rel="noopener"><span class="play"></span><span class="t">Nullstellen berechnen</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/EwITpDN5W1w" target="_blank" rel="noopener"><span class="play"></span><span class="t">PQ-Formel – Nullstellen berechnen</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/aGmxlKRxT8w" target="_blank" rel="noopener"><span class="play"></span><span class="t">PQ-Formel – schwierige Aufgaben</span><span class="hub">YouTube</span></a>
+        <a class="vid" href="https://youtu.be/kJY93AiBMvY" target="_blank" rel="noopener"><span class="play"></span><span class="t">Satz von Vieta</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/quadratische-funktionen/" target="_blank" rel="noopener">Playlist quadratische Gleichungen</a>
+        <div class="hinweis">Hinweis: Das Buch nutzt die Mitternachtsformel; Lehrerschmidt erklärt die gleichwertige PQ-Formel.</div>
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo (Mitternachtsformel wie im Buch)</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/1549/mitternachtsformel-quadratische-loesungsformel" target="_blank" rel="noopener"><span class="s">SERLO</span>Mitternachtsformel – erklärt &amp; hergeleitet</a>
+          <a class="serlo" href="https://de.serlo.org/mathe/16242/quadratische-gleichungen" target="_blank" rel="noopener"><span class="s">SERLO</span>Quadratische Gleichungen – Aufgaben</a>
+          </div>
+        </div>
     </div></div>
   </div>
-
-  <div class="chapter" data-grade="8" data-id="t7">
+  <div class="chapter" data-grade="8" data-chapter="t7" data-count="4">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">VII</div>
-      <div class="ctitle"><h3>Lineare Gleichungssysteme</h3><div class="sub">Zeichnerisch &amp; rechnerisch lösen, Anzahl der Lösungen</div></div>
+      <div class="ctitle"><h3>Lineare Gleichungssysteme</h3><div class="sub">Zwei Variablen, Lösungsvielfalt</div></div>
+      <div class="cprog mono" data-cprog="t7">0/4</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Alle drei Verfahren</div>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/lineare-gleichungssysteme/" target="_blank" rel="noopener">Playlist LGS: Gleichsetzungs-, Additions- &amp; Einsetzungsverfahren</a>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/16330/lineare-gleichungssysteme" target="_blank" rel="noopener"><span class="s">SERLO</span>Lineare Gleichungssysteme – Übersicht</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="t7a">
+          <span class="tick"></span>
+          <span class="it-text">Lineare Gleichungen mit zwei Variablen</span>
+          <span class="pnum">S. 60</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t7b">
+          <span class="tick"></span>
+          <span class="it-text">Lineare Gleichungssysteme mit zwei Variablen</span>
+          <span class="pnum">S. 61</span>
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="t7c">
+          <span class="tick"></span>
+          <span class="it-text">Die Lösungsvielfalt von Gleichungssystemen</span>
+          <span class="pnum">S. 62</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t7T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 63</span>
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Alle drei Verfahren</div>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/lineare-gleichungssysteme/" target="_blank" rel="noopener">Playlist LGS: Gleichsetzung, Addition, Einsetzung</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/16330/lineare-gleichungssysteme" target="_blank" rel="noopener"><span class="s">SERLO</span>Lineare Gleichungssysteme – Übersicht</a>
+          </div>
+        </div>
     </div></div>
   </div>
 
@@ -766,51 +1030,125 @@
     <h2>Vorschau: Klasse 9</h2>
     <span class="stampel k9">Klasse 9</span>
   </div>
-
-  <div class="chapter" data-grade="9" data-id="n1">
+  <div class="chapter" data-grade="9" data-chapter="n1" data-count="7">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">I</div>
-      <div class="ctitle"><h3>Potenzen</h3><div class="sub">Potenzgesetze, rationale Hochzahlen, Potenz- &amp; Wurzelgleichungen</div></div>
+      <div class="ctitle"><h3>Potenzen</h3><div class="sub">Potenzgesetze, rationale Hochzahlen, Wurzelgleichungen</div></div>
+      <div class="cprog mono" data-cprog="n1">0/7</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Baut direkt auf Kapitel III (Wurzeln) auf</div>
-      <a class="vid" href="https://www.youtube.com/watch?v=ABifww27SHk" target="_blank" rel="noopener"><span class="play"></span><span class="t">Potenzen – besondere Exponenten</span><span class="hub">YouTube</span></a>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/potenz-und-wurzelrechnung/" target="_blank" rel="noopener">Playlist „Potenz- und Wurzelrechnung“</a>
-      <div class="serlo-row">
-        <div class="lead">Üben bei Serlo</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/16360/potenzen-und-wurzeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Potenzen und Wurzeln (inkl. rationale Exponenten)</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="n1a">
+          <span class="tick"></span>
+          <span class="it-text">Potenzen mit ganzen Hochzahlen</span>
+          
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="n1b">
+          <span class="tick"></span>
+          <span class="it-text">Potenzen mit gleichen Grundzahlen</span>
+          
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="n1c">
+          <span class="tick"></span>
+          <span class="it-text">Potenzen mit gleichen Hochzahlen</span>
+          
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="n1d">
+          <span class="tick"></span>
+          <span class="it-text">Potenzen potenzieren</span>
+          
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="n1e">
+          <span class="tick"></span>
+          <span class="it-text">Potenzen mit rationalen Hochzahlen</span>
+          
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="n1f">
+          <span class="tick"></span>
+          <span class="it-text">Potenz- und Wurzelgleichungen lösen</span>
+          
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="n1T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Baut direkt auf Kapitel III (Wurzeln) auf</div>
+        <a class="vid" href="https://www.youtube.com/watch?v=ABifww27SHk" target="_blank" rel="noopener"><span class="play"></span><span class="t">Potenzen – besondere Exponenten</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/potenz-und-wurzelrechnung/" target="_blank" rel="noopener">Playlist „Potenz- und Wurzelrechnung“</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/16360/potenzen-und-wurzeln" target="_blank" rel="noopener"><span class="s">SERLO</span>Potenzen und Wurzeln (inkl. rationale Exponenten)</a>
+          </div>
+        </div>
     </div></div>
   </div>
-
-  <div class="chapter" data-grade="9" data-id="n2">
+  <div class="chapter" data-grade="9" data-chapter="n2" data-count="4">
     <div class="chead">
-      <div class="check"></div>
       <div class="roman">II</div>
-      <div class="ctitle"><h3>Kongruenz und Ähnlichkeit</h3><div class="sub">Kongruenzsätze, Dreiecke, Vielecke mit Ähnlichkeit</div></div>
+      <div class="ctitle"><h3>Kongruenz und Ähnlichkeit</h3><div class="sub">Kongruenzsätze, ähnliche Dreiecke &amp; Vielecke</div></div>
+      <div class="cprog mono" data-cprog="n2">0/4</div>
       <div class="chev">▶</div>
     </div>
-    <div class="vids"><div class="vids-inner">
-      <div class="lead">Knüpft an die Strahlensätze (Kap. V) an</div>
-      <a class="vid" href="https://www.youtube.com/watch?v=Sm8DnMbQD00" target="_blank" rel="noopener"><span class="play"></span><span class="t">Ähnlichkeit von Dreiecken</span><span class="hub">YouTube</span></a>
-      <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/geometrie/" target="_blank" rel="noopener">Geometrie-Playlist: Kongruenz, kongruent, Ähnlichkeit</a>
-      <div class="serlo-row">
-        <div class="lead">Kongruenzsätze bei Serlo (füllt die Lücke bei Lehrerschmidt)</div>
-        <a class="serlo" href="https://de.serlo.org/mathe/1925/kongruenz" target="_blank" rel="noopener"><span class="s">SERLO</span>Kongruenz &amp; die vier Kongruenzsätze</a>
-        <a class="serlo" href="https://de.serlo.org/mathe/78815/zusammenfassung-der-kongruenzsaetze" target="_blank" rel="noopener"><span class="s">SERLO</span>Zusammenfassung: SSS, SWS, SsW, WSW</a>
-        <a class="serlo" href="https://de.serlo.org/mathe/174728/aufgaben-zu-den-kongruenzsaetzen-fuer-dreiecke" target="_blank" rel="noopener"><span class="s">SERLO</span>Aufgaben zu den Kongruenzsätzen</a>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item">
+          <input type="checkbox" data-cb="n2a">
+          <span class="tick"></span>
+          <span class="it-text">Dreiecke auf Kongruenz prüfen</span>
+          
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="n2b">
+          <span class="tick"></span>
+          <span class="it-text">Mit Kongruenzsätzen beweisen</span>
+          
+        </label>
+        <label class="item">
+          <input type="checkbox" data-cb="n2c">
+          <span class="tick"></span>
+          <span class="it-text">Vielecke auf Ähnlichkeit untersuchen</span>
+          
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="n2T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          
+        </label>
       </div>
+        <div class="res">
+          <div class="lead">Knüpft an die Strahlensätze (Kap. V) an</div>
+        <a class="vid" href="https://www.youtube.com/watch?v=Sm8DnMbQD00" target="_blank" rel="noopener"><span class="play"></span><span class="t">Ähnlichkeit von Dreiecken</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/geometrie/" target="_blank" rel="noopener">Geometrie-Playlist: Kongruenz, Ähnlichkeit</a>
+
+          <div class="serlo-row">
+            <div class="lead">Kongruenzsätze bei Serlo (füllt die Lücke bei Lehrerschmidt)</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/1925/kongruenz" target="_blank" rel="noopener"><span class="s">SERLO</span>Kongruenz &amp; die vier Kongruenzsätze</a>
+          <a class="serlo" href="https://de.serlo.org/mathe/78815/zusammenfassung-der-kongruenzsaetze" target="_blank" rel="noopener"><span class="s">SERLO</span>Zusammenfassung: SSS, SWS, SsW, WSW</a>
+          <a class="serlo" href="https://de.serlo.org/mathe/174728/aufgaben-zu-den-kongruenzsaetzen-fuer-dreiecke" target="_blank" rel="noopener"><span class="s">SERLO</span>Aufgaben zu den Kongruenzsätzen</a>
+          </div>
+        </div>
     </div></div>
   </div>
 
   <footer>
     <div class="colophon">
+      Struktur · Lambacher Schweizer,
+      Schulbuch (Klett)<br>
       Video · Lehrerschmidt (Kai Schmidt)<br>
-      Övning · Serlo (gratis, reklamfri)<br>
-      Uppgifter · Klassenarbeitstrainer,
-      Lambacher Schweizer (Klett)
+      Övning · Serlo (gratis, reklamfri)
     </div>
     <div class="sign">Lycka till — viel
       Erfolg.</div>
@@ -823,104 +1161,42 @@
     <span class="mono-mini" id="bubbleTag">Gepard</span>
     <span id="bubbleMsg"></span>
   </div>
-  <!-- original chibi cheetah, drawn in
-       the page palette (not realistic
-       orange) so it stays on-style -->
   <svg class="mascot" id="mascot"
-    viewBox="0 0 100 100"
-    role="img"
+    viewBox="0 0 100 100" role="img"
     aria-label="Gepard-Maskottchen, das dich anfeuert">
-    <!-- tail -->
-    <path d="M78 62
-      q18 4 14 22 q-2 8 -9 7
-      q-5 -1 -3 -7 q3 -9 -8 -14 z"
-      fill="#e0a86b"/>
-    <circle cx="88" cy="80" r="1.7"
-      fill="#5a4632"/>
-    <circle cx="83" cy="86" r="1.5"
-      fill="#5a4632"/>
-    <!-- back legs -->
-    <ellipse cx="40" cy="86" rx="7"
-      ry="9" fill="#e0a86b"/>
-    <ellipse cx="60" cy="86" rx="7"
-      ry="9" fill="#e0a86b"/>
-    <!-- body -->
-    <ellipse cx="50" cy="64" rx="26"
-      ry="24" fill="#eab876"/>
-    <!-- belly -->
-    <ellipse cx="50" cy="70" rx="15"
-      ry="15" fill="#f6e4c8"/>
-    <!-- body spots -->
-    <circle cx="34" cy="58" r="2.4"
-      fill="#7a5a38"/>
-    <circle cx="42" cy="50" r="2.2"
-      fill="#7a5a38"/>
-    <circle cx="64" cy="54" r="2.4"
-      fill="#7a5a38"/>
-    <circle cx="68" cy="66" r="2.2"
-      fill="#7a5a38"/>
-    <circle cx="33" cy="70" r="2.2"
-      fill="#7a5a38"/>
-    <!-- raised arms (cheering) -->
-    <ellipse cx="26" cy="48" rx="5"
-      ry="8" fill="#eab876"
-      transform="rotate(28 26 48)"/>
-    <ellipse cx="74" cy="48" rx="5"
-      ry="8" fill="#eab876"
-      transform="rotate(-28 74 48)"/>
-    <!-- head -->
-    <circle cx="50" cy="34" r="22"
-      fill="#eab876"/>
-    <!-- ears -->
-    <circle cx="34" cy="18" r="7"
-      fill="#eab876"/>
-    <circle cx="66" cy="18" r="7"
-      fill="#eab876"/>
-    <circle cx="34" cy="18" r="3.4"
-      fill="#c98d94"/>
-    <circle cx="66" cy="18" r="3.4"
-      fill="#c98d94"/>
-    <!-- head spots -->
-    <circle cx="36" cy="30" r="2"
-      fill="#7a5a38"/>
-    <circle cx="64" cy="30" r="2"
-      fill="#7a5a38"/>
-    <circle cx="50" cy="22" r="1.8"
-      fill="#7a5a38"/>
-    <!-- cheeks -->
-    <circle cx="38" cy="40" r="4"
-      fill="#eaa1a6" opacity=".55"/>
-    <circle cx="62" cy="40" r="4"
-      fill="#eaa1a6" opacity=".55"/>
-    <!-- eyes -->
-    <circle cx="42" cy="34" r="4.4"
-      fill="#232220"/>
-    <circle cx="58" cy="34" r="4.4"
-      fill="#232220"/>
-    <circle cx="43.4" cy="32.4" r="1.5"
-      fill="#fff"/>
-    <circle cx="59.4" cy="32.4" r="1.5"
-      fill="#fff"/>
-    <!-- cheetah tear lines -->
-    <path d="M42 38 q-2 6 -5 10"
-      stroke="#7a5a38"
-      stroke-width="1.6" fill="none"
-      stroke-linecap="round"/>
-    <path d="M58 38 q2 6 5 10"
-      stroke="#7a5a38"
-      stroke-width="1.6" fill="none"
-      stroke-linecap="round"/>
-    <!-- nose + smile -->
-    <path d="M47 41 h6 l-3 3 z"
-      fill="#8a5a4a"/>
-    <path d="M50 44 q-4 4 -8 2"
-      stroke="#8a5a4a"
-      stroke-width="1.5" fill="none"
-      stroke-linecap="round"/>
-    <path d="M50 44 q4 4 8 2"
-      stroke="#8a5a4a"
-      stroke-width="1.5" fill="none"
-      stroke-linecap="round"/>
+    <path d="M78 62 q18 4 14 22 q-2 8 -9 7 q-5 -1 -3 -7 q3 -9 -8 -14 z" fill="#e0a86b"/>
+    <circle cx="88" cy="80" r="1.7" fill="#5a4632"/>
+    <circle cx="83" cy="86" r="1.5" fill="#5a4632"/>
+    <ellipse cx="40" cy="86" rx="7" ry="9" fill="#e0a86b"/>
+    <ellipse cx="60" cy="86" rx="7" ry="9" fill="#e0a86b"/>
+    <ellipse cx="50" cy="64" rx="26" ry="24" fill="#eab876"/>
+    <ellipse cx="50" cy="70" rx="15" ry="15" fill="#f6e4c8"/>
+    <circle cx="34" cy="58" r="2.4" fill="#7a5a38"/>
+    <circle cx="42" cy="50" r="2.2" fill="#7a5a38"/>
+    <circle cx="64" cy="54" r="2.4" fill="#7a5a38"/>
+    <circle cx="68" cy="66" r="2.2" fill="#7a5a38"/>
+    <circle cx="33" cy="70" r="2.2" fill="#7a5a38"/>
+    <ellipse cx="26" cy="48" rx="5" ry="8" fill="#eab876" transform="rotate(28 26 48)"/>
+    <ellipse cx="74" cy="48" rx="5" ry="8" fill="#eab876" transform="rotate(-28 74 48)"/>
+    <circle cx="50" cy="34" r="22" fill="#eab876"/>
+    <circle cx="34" cy="18" r="7" fill="#eab876"/>
+    <circle cx="66" cy="18" r="7" fill="#eab876"/>
+    <circle cx="34" cy="18" r="3.4" fill="#c98d94"/>
+    <circle cx="66" cy="18" r="3.4" fill="#c98d94"/>
+    <circle cx="36" cy="30" r="2" fill="#7a5a38"/>
+    <circle cx="64" cy="30" r="2" fill="#7a5a38"/>
+    <circle cx="50" cy="22" r="1.8" fill="#7a5a38"/>
+    <circle cx="38" cy="40" r="4" fill="#eaa1a6" opacity=".55"/>
+    <circle cx="62" cy="40" r="4" fill="#eaa1a6" opacity=".55"/>
+    <circle cx="42" cy="34" r="4.4" fill="#232220"/>
+    <circle cx="58" cy="34" r="4.4" fill="#232220"/>
+    <circle cx="43.4" cy="32.4" r="1.5" fill="#fff"/>
+    <circle cx="59.4" cy="32.4" r="1.5" fill="#fff"/>
+    <path d="M42 38 q-2 6 -5 10" stroke="#7a5a38" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <path d="M58 38 q2 6 5 10" stroke="#7a5a38" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <path d="M47 41 h6 l-3 3 z" fill="#8a5a4a"/>
+    <path d="M50 44 q-4 4 -8 2" stroke="#8a5a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M50 44 q4 4 8 2" stroke="#8a5a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
   </svg>
 </div>
 
@@ -929,38 +1205,33 @@
     Array.from(
       document.querySelectorAll('.chapter')
     );
-  const total = chapters.length;
+  const boxes = Array.from(
+    document.querySelectorAll(
+      'input[type=checkbox]')
+  );
+  const total = boxes.length;
   const barfill =
     document.getElementById('barfill');
   const pctval =
     document.getElementById('pctval');
-  const STORE_KEY = 'mathe-revision-done';
+  const STORE_KEY = 'mathe-revision-v2';
 
   function loadState() {
     try {
       const raw =
         localStorage.getItem(STORE_KEY);
-      return raw
-        ? JSON.parse(raw)
-        : {};
-    } catch (e) {
-      return {};
-    }
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
   }
-  function saveState(state) {
+  function saveState(s) {
     try {
       localStorage.setItem(
-        STORE_KEY,
-        JSON.stringify(state)
-      );
-    } catch (e) {
-      /* storage blocked: session only */
-    }
+        STORE_KEY, JSON.stringify(s));
+    } catch (e) {}
   }
-
   const state = loadState();
 
-  // ---- mascot ----
+  // mascot refs
   const mascot =
     document.getElementById('mascot');
   const bubble =
@@ -971,37 +1242,38 @@
     document.getElementById('bubbleTag');
   let bubbleTimer = null;
 
-  // messages when you tick a chapter
   const cheers = [
     'Stark! Weiter so.',
-    'Ein Kapitel weniger. Snyggt!',
+    'Ein Häkchen mehr. Snyggt!',
     'Läuft bei dir.',
     'Sitzt. Nächstes?',
     'Sauber gemacht.',
     'Immer im Sprinttempo.'
   ];
-  // milestone messages by percent
   const milestones = {
-    25:  ['Viertel geschafft',
-          'Guter Start — der Gepard '
-          + 'nickt anerkennend.'],
-    50:  ['Halbzeit',
-          'Die Hälfte ist durch. '
-          + 'Durchatmen, weiterlaufen.'],
-    75:  ['Dreiviertel',
-          'Fast am Ziel. Der Gepard '
-          + 'wird nervös vor Freude.'],
-    100: ['Allt klart!',
-          'Alles abgehakt. Lycka '
-          + 'till in Klasse 9!']
+    25:['Viertel geschafft',
+      'Guter Start — der Gepard nickt '
+      + 'anerkennend.'],
+    50:['Halbzeit',
+      'Die Hälfte ist durch. Durchatmen, '
+      + 'weiterlaufen.'],
+    75:['Dreiviertel',
+      'Fast am Ziel. Der Gepard wird '
+      + 'nervös vor Freude.'],
+    100:['Allt klart!',
+      'Alles abgehakt. Lycka till in '
+      + 'Klasse 9!']
   };
+  // extra cheer when a Klassenarbeit is ticked
+  const arbeitCheer = ['Klassenarbeit',
+    'Übungsarbeit erledigt — das zählt '
+    + 'doppelt!'];
 
   function showBubble(tag, msg) {
     bubbleTag.textContent = tag;
     bubbleMsg.textContent = msg;
     bubble.classList.add('show');
     mascot.classList.remove('cheer');
-    // reflow to restart animation
     void mascot.offsetWidth;
     mascot.classList.add('cheer');
     clearTimeout(bubbleTimer);
@@ -1009,103 +1281,113 @@
       bubble.classList.remove('show');
     }, 3600);
   }
-
   function pickCheer() {
     return cheers[Math.floor(
       Math.random() * cheers.length)];
   }
 
+  function countDone() {
+    return boxes.filter(b => b.checked)
+      .length;
+  }
+
+  function refreshChapter(ch) {
+    const ins = ch.querySelectorAll(
+      'input[type=checkbox]');
+    const done = Array.from(ins)
+      .filter(i => i.checked).length;
+    const n = ins.length;
+    const prog = ch.querySelector(
+      '[data-cprog]');
+    if (prog) prog.textContent =
+      done + '/' + n;
+    ch.classList.toggle(
+      'complete', done === n && n > 0);
+  }
+
   function updateProgress(opts) {
-    const done = chapters.filter(c =>
-      c.classList.contains('done')
-    ).length;
+    const done = countDone();
     const pct =
       Math.round(done / total * 100);
     barfill.style.width = pct + '%';
     pctval.textContent = pct + '%';
-
-    // react only on a real tick,
-    // not on initial load
     if (opts && opts.react) {
       if (milestones[pct]) {
-        showBubble(
-          milestones[pct][0],
+        showBubble(milestones[pct][0],
           milestones[pct][1]);
+      } else if (opts.training) {
+        showBubble(arbeitCheer[0],
+          arbeitCheer[1]);
       } else if (opts.added) {
-        showBubble('Gepard',
-          pickCheer());
+        showBubble('Gepard', pickCheer());
       }
     }
   }
 
-  // tap the cheetah for a nudge
-  mascot.addEventListener('click',
-    () => {
-      const done = chapters.filter(c =>
-        c.classList.contains('done')
-      ).length;
-      if (done === 0) {
-        showBubble('Redo?',
-          'Tippe ein Kapitel an und '
-          + 'leg los. Ich feuere.');
-      } else if (done === total) {
-        showBubble('Klart!',
-          'Alles geschafft. Stolzer '
-          + 'Gepard.');
-      } else {
-        showBubble('Heja!',
-          'Noch ' + (total - done)
-          + ' Kapitel. Du packst '
-          + 'das.');
-      }
-    });
-
-  chapters.forEach(ch => {
-    const id = ch.dataset.id;
-    if (state[id]) {
-      ch.classList.add('done');
+  // restore
+  boxes.forEach(b => {
+    if (state[b.dataset.cb]) {
+      b.checked = true;
     }
   });
+  chapters.forEach(refreshChapter);
   updateProgress();
 
+  // open/close chapters
   chapters.forEach(ch => {
-    const head = ch.querySelector('.chead');
-    const check =
-      ch.querySelector('.check');
-
-    head.addEventListener('click', e => {
-      if (e.target === check) return;
+    const head =
+      ch.querySelector('.chead');
+    head.addEventListener('click', () => {
       ch.classList.toggle('open');
     });
+  });
 
-    check.addEventListener('click', e => {
-      e.stopPropagation();
-      ch.classList.toggle('done');
-      const added =
-        ch.classList.contains('done');
-      state[ch.dataset.id] = added;
+  // checkbox changes
+  boxes.forEach(b => {
+    b.addEventListener('change', () => {
+      state[b.dataset.cb] = b.checked;
       saveState(state);
+      const ch = b.closest('.chapter');
+      refreshChapter(ch);
+      const isTraining = b.closest(
+        '.training') !== null;
       updateProgress({
         react: true,
-        added: added
+        added: b.checked,
+        training: b.checked && isTraining
       });
     });
   });
 
-  document
-    .getElementById('resetBtn')
+  // tap the cheetah
+  mascot.addEventListener('click', () => {
+    const done = countDone();
+    if (done === 0) {
+      showBubble('Redo?',
+        'Klapp ein Kapitel auf und hak '
+        + 'los. Ich feuere.');
+    } else if (done === total) {
+      showBubble('Klart!',
+        'Alles geschafft. Stolzer Gepard.');
+    } else {
+      showBubble('Heja!',
+        'Noch ' + (total - done)
+        + ' zum Abhaken. Du packst das.');
+    }
+  });
+
+  document.getElementById('resetBtn')
     .addEventListener('click', () => {
-      chapters.forEach(c =>
-        c.classList.remove('done')
-      );
+      boxes.forEach(b => b.checked = false);
       for (const k in state) {
         delete state[k];
       }
       saveState(state);
+      chapters.forEach(refreshChapter);
       updateProgress();
       showBubble('Nollställt',
-        'Alles zurückgesetzt. '
-        + 'Frischer Lauf!');
+        'Alles zurückgesetzt. Frischer '
+        + 'Lauf!');
     });
 </script>
 </body>
