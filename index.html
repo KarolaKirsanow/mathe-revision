@@ -323,6 +323,21 @@
     justify-content:center;transition:background .18s;
   }
   a.vid:hover .play{background:var(--rost)}
+  a.vid .doc{
+    width:24px;height:24px;border-radius:6px;
+    background:var(--sage);flex-shrink:0;
+    display:flex;align-items:center;
+    justify-content:center;position:relative;
+    transition:background .18s;
+  }
+  a.vid .doc::after{
+    content:"";width:9px;height:11px;
+    background:var(--paper);border-radius:1px;
+    box-shadow:0 -3px 0 -1px var(--sage),
+      0 0 0 1px var(--sage) inset;
+  }
+  a.vid.textref:hover .doc{background:var(--sage-deep)}
+  a.vid.textref:hover{color:var(--sage-deep)}
   a.vid .play::after{
     content:"";border-style:solid;
     border-width:4px 0 4px 7px;
@@ -609,6 +624,10 @@
           <div class="vgroup-h">5. Geometrische Sätze – Begründen in der Geometrie</div>
           <a class="vid" href="https://www.youtube.com/watch?v=5YLm6hRpAno" target="_blank" rel="noopener"><span class="play"></span><span class="t">Winkelpaare: Neben-, Scheitel-, Stufen-, Wechselwinkel</span><span class="hub">YouTube</span></a>
           <a class="vid" href="https://www.youtube.com/live/RU9k_2VuBqI" target="_blank" rel="noopener"><span class="play"></span><span class="t">Winkelsätze #1 – Übersicht</span><span class="hub">YouTube</span></a>
+          <a class="vid" href="https://www.youtube.com/watch?v=dsAiVuii80M" target="_blank" rel="noopener"><span class="play"></span><span class="t">Satz des Thales – Thaleskreis</span><span class="hub">YouTube</span></a>
+          <a class="vid" href="https://www.youtube.com/watch?v=jRbsnkbJc6k" target="_blank" rel="noopener"><span class="play"></span><span class="t">Umkreis konstruieren (Mittelsenkrechte)</span><span class="hub">YouTube</span></a>
+          <a class="vid" href="https://www.youtube.com/watch?v=efc_pgIi4Rs" target="_blank" rel="noopener"><span class="play"></span><span class="t">Inkreis konstruieren (Winkelhalbierende)</span><span class="hub">YouTube</span></a>
+          <a class="vid textref" href="https://studyflix.de/mathematik/satz-des-thales-2541" target="_blank" rel="noopener"><span class="doc"></span><span class="t">Zum Nachlesen: Satz des Thales (studyflix)</span><span class="hub">Text</span></a>
         </div>
         <div class="vgroup">
           <div class="vgroup-h">6. Prozentrechnung – Zinsrechnung</div>
@@ -618,8 +637,10 @@
         <div class="vgroup">
           <div class="vgroup-h">7. Daten auswerten</div>
           <a class="vid" href="https://youtu.be/SiIBa_AjWCg" target="_blank" rel="noopener"><span class="play"></span><span class="t">Median ermitteln und berechnen</span><span class="hub">YouTube</span></a>
-          <a class="vid" href="https://youtu.be/7Jyv36lTbE4" target="_blank" rel="noopener"><span class="play"></span><span class="t">Boxplot erstellen</span><span class="hub">YouTube</span></a>
           <a class="vid" href="https://youtu.be/4VSQTGhUhX8" target="_blank" rel="noopener"><span class="play"></span><span class="t">Zentralwert ermitteln</span><span class="hub">YouTube</span></a>
+          <a class="vid" href="https://www.youtube.com/watch?v=mclAY5gY8cM" target="_blank" rel="noopener"><span class="play"></span><span class="t">Boxplot – einfach erklärt</span><span class="hub">YouTube</span></a>
+          <a class="vid" href="https://youtu.be/7Jyv36lTbE4" target="_blank" rel="noopener"><span class="play"></span><span class="t">Boxplot – einfaches &amp; schwieriges Beispiel</span><span class="hub">YouTube</span></a>
+          <a class="vid textref" href="https://de.bettermarks.com/mathe/quartile-und-boxplots/" target="_blank" rel="noopener"><span class="doc"></span><span class="t">Zum Nachlesen: Quartile &amp; Boxplots (bettermarks)</span><span class="hub">Text</span></a>
         </div>
         <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/" target="_blank" rel="noopener">Alle Themen als sortierte Playlists (lehrer-schmidt.de)</a>        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/daten-und-diagramme/" target="_blank" rel="noopener" style="margin-left:14px">Playlist „Daten und Diagramme“ (Median, Boxplot …)</a>
         </div>
