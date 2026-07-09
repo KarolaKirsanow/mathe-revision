@@ -142,6 +142,46 @@
   }
   .note b{color:var(--ink);font-weight:600}
 
+  .depmap{
+    margin:0 0 30px;padding:20px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+  .depmap figcaption{margin-bottom:12px}
+  .depmap .dm-title{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-size:18px;color:var(--ink);
+  }
+  .depmap .dm-sub{
+    display:block;font-size:13px;
+    color:var(--ink-soft);margin-top:3px;
+  }
+  .depmap svg{width:100%;height:auto}
+  .depmap .dm-h{
+    font-family:'DM Mono',monospace;
+    font-size:11px;fill:var(--ink-soft);
+    letter-spacing:.04em;
+  }
+  .depmap .dm-t{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;font-weight:600;
+    fill:var(--card);text-anchor:middle;
+  }
+  .depmap .dm-ts{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;fill:var(--card);
+    text-anchor:middle;opacity:.85;
+  }
+  .depmap .dm-lg{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12px;fill:var(--ink-soft);
+    dominant-baseline:middle;
+  }
+  .depmap .dm-crit rect{fill:var(--rost);stroke:var(--rost-deep);stroke-width:.5}
+  .depmap .dm-imp rect{fill:#c98a34;stroke:#a97120;stroke-width:.5}
+
   .part{
     display:flex;align-items:baseline;
     gap:14px;margin:44px 0 20px;
@@ -228,6 +268,22 @@
     border-bottom:1px solid var(--paper-2);
   }
   label.item:last-child{border-bottom:none}
+  /* priority stripe: red=critical,
+     orange=important, gray=low */
+  label.item{
+    border-left:3px solid transparent;
+    padding-left:10px;margin-left:-13px;
+    border-radius:0;
+  }
+  label.item.prio-crit{
+    border-left-color:var(--rost);
+  }
+  label.item.prio-imp{
+    border-left-color:#d99a3c;
+  }
+  label.item.prio-low{
+    border-left-color:var(--line);
+  }
   label.item input{
     position:absolute;opacity:0;
     width:0;height:0;
@@ -497,7 +553,7 @@
       markiert. Ansehen, üben, abhaken.</p>
     <div class="facts">
       <div class="fact">
-        <span class="n">66</span>
+        <span class="n">68</span>
         <span class="l">zum Abhaken</span>
       </div>
       <div class="fact">
@@ -530,57 +586,135 @@
     bleibt im Browser gespeichert.
   </div>
 
+  <figure class="depmap">
+    <figcaption>
+      <span class="dm-title">Was worauf aufbaut</span>
+      <span class="dm-sub">Die Reihenfolge unten
+        folgt diesen Abhängigkeiten. Farbe =
+        Wichtigkeit für Klasse 9.</span>
+    </figcaption>
+    <svg viewBox="0 0 680 430" role="img" aria-label="Abhängigkeitskarte der Themen aus der Vorstufe und Klasse 8. Pfeile zeigen, welches Thema auf welches aufbaut. Farbe zeigt die Wichtigkeit für Klasse 9: Rot kritisch, Orange wichtig, Grau nachrangig.">
+      <defs>
+        <marker id="dmar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      </defs>
+      <text x="20" y="24" class="dm-h">Vorstufe (Klasse 7)</text>
+      <text x="380" y="24" class="dm-h">Klasse 8</text>
+      <line x1="352" y1="12" x2="352" y2="410" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 4"/>
+
+      <g class="dm-crit">
+        <rect x="20" y="40" width="150" height="50" rx="9"/>
+        <text x="95" y="60" class="dm-t">Terme umformen</text>
+        <text x="95" y="78" class="dm-ts">äquiv. Umformen</text>
+      </g>
+      <g class="dm-imp">
+        <rect x="20" y="112" width="150" height="46" rx="9"/>
+        <text x="95" y="139" class="dm-t">Lineare Funktionen</text>
+      </g>
+      <g class="dm-imp">
+        <rect x="20" y="180" width="150" height="46" rx="9"/>
+        <text x="95" y="207" class="dm-t">Winkelsätze</text>
+      </g>
+
+      <g class="dm-crit">
+        <rect x="378" y="40" width="164" height="50" rx="9"/>
+        <text x="460" y="60" class="dm-t">Reelle Zahlen</text>
+        <text x="460" y="78" class="dm-ts">Wurzeln — #1</text>
+      </g>
+      <g class="dm-crit">
+        <rect x="378" y="128" width="164" height="50" rx="9"/>
+        <text x="460" y="148" class="dm-t">Quadrat. Funktionen</text>
+        <text x="460" y="166" class="dm-ts">Parabeln, f(x)</text>
+      </g>
+      <g class="dm-imp">
+        <rect x="378" y="216" width="164" height="50" rx="9"/>
+        <text x="460" y="236" class="dm-t">Quadrat. Gleichungen</text>
+        <text x="460" y="254" class="dm-ts">Lösungsformel</text>
+      </g>
+      <g class="dm-crit">
+        <rect x="378" y="304" width="164" height="50" rx="9"/>
+        <text x="460" y="324" class="dm-t">Strahlensätze</text>
+        <text x="460" y="342" class="dm-ts">Ähnlichkeit</text>
+      </g>
+
+      <line x1="170" y1="65" x2="374" y2="65" stroke="var(--rost)" stroke-width="1.5" marker-end="url(#dmar)"/>
+      <path d="M170 135 L270 135 L270 150 L374 150" fill="none" stroke="#d99a3c" stroke-width="1.5" marker-end="url(#dmar)"/>
+      <path d="M170 203 L300 203 L300 329 L374 329" fill="none" stroke="#d99a3c" stroke-width="1.5" marker-end="url(#dmar)"/>
+      <path d="M542 88 L556 88 L556 110 L462 110 L462 126" fill="none" stroke="var(--rost)" stroke-width="1.5" marker-end="url(#dmar)"/>
+      <line x1="460" y1="178" x2="460" y2="214" stroke="var(--rost)" stroke-width="1.5" marker-end="url(#dmar)"/>
+
+      <text x="20" y="392" class="dm-h">Wichtigkeit für Klasse 9</text>
+      <rect x="20" y="402" width="13" height="13" rx="3" fill="var(--rost)"/>
+      <text x="40" y="412" class="dm-lg">kritisch</text>
+      <rect x="120" y="402" width="13" height="13" rx="3" fill="#d99a3c"/>
+      <text x="140" y="412" class="dm-lg">wichtig</text>
+      <rect x="222" y="402" width="13" height="13" rx="3" fill="var(--line)"/>
+      <text x="242" y="412" class="dm-lg">nachrangig</text>
+    </svg>
+  </figure>
+
   <div class="part">
     <span class="idx">v.1</span>
-    <h2>Grundlagen, Klasse 8</h2>
+    <h2>Zuerst — die tragenden Themen</h2>
     <span class="stampel">Klasse 8</span>
   </div>
-  <div class="chapter" data-grade="8" data-chapter="g" data-count="7">
+  <div class="chapter" data-grade="8" data-chapter="g" data-count="9">
     <div class="chead">
       <div class="roman">·</div>
       <div class="ctitle"><h3>Training Grundwissen</h3><div class="sub">Wiederholung aus Klasse 7</div></div>
-      <div class="cprog mono" data-cprog="g">0/7</div>
+      <div class="cprog mono" data-cprog="g">0/9</div>
       <div class="chev">▶</div>
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
-          <input type="checkbox" data-cb="g1">
+        <label class="item prio-crit">
+          <input type="checkbox" data-cb="g1a">
           <span class="tick"></span>
-          <span class="it-text">Zahlterme – Terme mit einer Variablen</span>
+          <span class="it-text">Zahlterme aufstellen &amp; Wert berechnen</span>
           <span class="pnum">S. 4</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
+          <input type="checkbox" data-cb="g1b">
+          <span class="tick"></span>
+          <span class="it-text">Terme mit einer Variablen vereinfachen</span>
+          <span class="pnum">S. 4</span>
+        </label>
+        <label class="item prio-crit">
+          <input type="checkbox" data-cb="g1c">
+          <span class="tick"></span>
+          <span class="it-text">Äquivalentes Umformen (Grundprinzip)</span>
+          <span class="pnum">S. 4</span>
+        </label>
+        <label class="item prio-low">
           <input type="checkbox" data-cb="g2">
           <span class="tick"></span>
           <span class="it-text">Geometrische Figuren konstruieren – Ortslinien</span>
           <span class="pnum">S. 5</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="g3">
           <span class="tick"></span>
           <span class="it-text">Lineare Funktionen</span>
           <span class="pnum">S. 6</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="g4">
           <span class="tick"></span>
           <span class="it-text">Lineare Gleichungen</span>
           <span class="pnum">S. 7</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="g5">
           <span class="tick"></span>
           <span class="it-text">Geometrische Sätze – Begründen in der Geometrie</span>
           <span class="pnum">S. 8</span>
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="g6">
           <span class="tick"></span>
           <span class="it-text">Prozentrechnung – Zinsrechnung</span>
           <span class="pnum">S. 9</span>
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="g7">
           <span class="tick"></span>
           <span class="it-text">Daten auswerten</span>
@@ -655,31 +789,31 @@
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t1a">
           <span class="tick"></span>
           <span class="it-text">Terme mit mehreren Variablen</span>
           <span class="pnum">S. 10</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t1b">
           <span class="tick"></span>
           <span class="it-text">Vereinfachen von Summen und Produkten</span>
           <span class="pnum">S. 11</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t1c">
           <span class="tick"></span>
           <span class="it-text">Multiplizieren von Summen</span>
           <span class="pnum">S. 12</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t1d">
           <span class="tick"></span>
           <span class="it-text">Binomische Formeln</span>
           <span class="pnum">S. 13</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t1e">
           <span class="tick"></span>
           <span class="it-text">Formeln nach Variablen auflösen</span>
@@ -706,75 +840,6 @@
         </div>
     </div></div>
   </div>
-  <div class="chapter" data-grade="8" data-chapter="t2" data-count="8">
-    <div class="chead">
-      <div class="roman">II</div>
-      <div class="ctitle"><h3>Zufall und Wahrscheinlichkeit</h3><div class="sub">Produkt- &amp; Summenregel, Baumdiagramme, Laplace</div></div>
-      <div class="cprog mono" data-cprog="t2">0/8</div>
-      <div class="chev">▶</div>
-    </div>
-    <div class="cbody"><div class="cbody-inner">
-      <div class="checklist">
-        <label class="item">
-          <input type="checkbox" data-cb="t2a">
-          <span class="tick"></span>
-          <span class="it-text">Zufallsexperimente – Wahrscheinlichkeiten</span>
-          <span class="pnum">S. 17</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t2b">
-          <span class="tick"></span>
-          <span class="it-text">Versuchsreihen ergeben Wahrscheinlichkeiten</span>
-          <span class="pnum">S. 18</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t2c">
-          <span class="tick"></span>
-          <span class="it-text">Mehrstufige Zufallsexperimente – Produktregel</span>
-          <span class="pnum">S. 19</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t2d">
-          <span class="tick"></span>
-          <span class="it-text">Ereignisse – Summenregel</span>
-          <span class="pnum">S. 20</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t2e">
-          <span class="tick"></span>
-          <span class="it-text">Der richtige Blick aufs Baumdiagramm</span>
-          <span class="pnum">S. 21</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t2f">
-          <span class="tick"></span>
-          <span class="it-text">Wahrscheinlichkeit bei Laplace-Experimenten</span>
-          <span class="pnum">S. 22</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t2g">
-          <span class="tick"></span>
-          <span class="it-text">Kombinatorische Hilfsmittel</span>
-          <span class="pnum">S. 23</span>
-        </label>
-        <label class="item training">
-          <input type="checkbox" data-cb="t2T">
-          <span class="tick"></span>
-          <span class="it-text">Klassenarbeit — Training</span>
-          <span class="pnum">S. 24</span>
-        </label>
-      </div>
-        <div class="res">
-          <div class="lead">Wahrscheinlichkeit &amp; Baumdiagramme</div>
-        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/daten-und-zufall-wahrscheinlichkeit/" target="_blank" rel="noopener">Playlist „Daten und Zufall – Wahrscheinlichkeit“</a>
-
-          <div class="serlo-row">
-            <div class="lead">Üben bei Serlo</div>
-          <a class="serlo" href="https://de.serlo.org/mathe/16365/berechnung-von-wahrscheinlichkeiten" target="_blank" rel="noopener"><span class="s">SERLO</span>Berechnung von Wahrscheinlichkeiten</a>
-          </div>
-        </div>
-    </div></div>
-  </div>
   <div class="chapter" data-grade="8" data-chapter="t3" data-count="7">
     <div class="chead">
       <div class="roman">III</div>
@@ -784,37 +849,37 @@
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t3a">
           <span class="tick"></span>
           <span class="it-text">Quadratwurzeln</span>
           <span class="pnum">S. 26</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t3b">
           <span class="tick"></span>
           <span class="it-text">Näherungsweises Berechnen von Quadratwurzeln</span>
           <span class="pnum">S. 27</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t3c">
           <span class="tick"></span>
           <span class="it-text">Reelle Zahlen</span>
           <span class="pnum">S. 28</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t3d">
           <span class="tick"></span>
           <span class="it-text">Rechenregeln für Quadratwurzeln</span>
           <span class="pnum">S. 29</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t3e">
           <span class="tick"></span>
           <span class="it-text">Teilweises Wurzelziehen</span>
           <span class="pnum">S. 30</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t3f">
           <span class="tick"></span>
           <span class="it-text">Kubikwurzel</span>
@@ -848,37 +913,37 @@
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t4a">
           <span class="tick"></span>
           <span class="it-text">Die Normalparabel y = x²</span>
           <span class="pnum">S. 34</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t4b">
           <span class="tick"></span>
           <span class="it-text">Normalparabeln im Koordinatensystem verschieben</span>
           <span class="pnum">S. 34</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t4c">
           <span class="tick"></span>
           <span class="it-text">Die Normalparabel parallel zur y-Achse strecken</span>
           <span class="pnum">S. 35</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t4d">
           <span class="tick"></span>
           <span class="it-text">Die Scheitelform der Parabelgleichung</span>
           <span class="pnum">S. 36</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t4e">
           <span class="tick"></span>
           <span class="it-text">Quadratische Funktionen</span>
           <span class="pnum">S. 37</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t4f">
           <span class="tick"></span>
           <span class="it-text">Bestimmung größter und kleinster Werte</span>
@@ -911,72 +976,8 @@
 
   <div class="part">
     <span class="idx">v.2</span>
-    <h2>Geometrie &amp; Gleichungen</h2>
+    <h2>Danach — aufbauend &amp; vertiefend</h2>
     <span class="stampel">Klasse 8</span>
-  </div>
-  <div class="chapter" data-grade="8" data-chapter="t5" data-count="7">
-    <div class="chead">
-      <div class="roman">V</div>
-      <div class="ctitle"><h3>Strahlensätze</h3><div class="sub">Zentrische Streckung, 1. &amp; 2. Strahlensatz</div></div>
-      <div class="cprog mono" data-cprog="t5">0/7</div>
-      <div class="chev">▶</div>
-    </div>
-    <div class="cbody"><div class="cbody-inner">
-      <div class="checklist">
-        <label class="item">
-          <input type="checkbox" data-cb="t5a">
-          <span class="tick"></span>
-          <span class="it-text">Vergrößern und Verkleinern – Streckenverhältnis</span>
-          <span class="pnum">S. 42</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t5b">
-          <span class="tick"></span>
-          <span class="it-text">Bruchgleichungen</span>
-          <span class="pnum">S. 42</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t5c">
-          <span class="tick"></span>
-          <span class="it-text">Die zentrische Streckung</span>
-          <span class="pnum">S. 43</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t5d">
-          <span class="tick"></span>
-          <span class="it-text">Der erste Strahlensatz</span>
-          <span class="pnum">S. 44</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t5e">
-          <span class="tick"></span>
-          <span class="it-text">Der zweite Strahlensatz</span>
-          <span class="pnum">S. 45</span>
-        </label>
-        <label class="item">
-          <input type="checkbox" data-cb="t5f">
-          <span class="tick"></span>
-          <span class="it-text">Strahlensätze bei Körpern</span>
-          <span class="pnum">S. 46</span>
-        </label>
-        <label class="item training">
-          <input type="checkbox" data-cb="t5T">
-          <span class="tick"></span>
-          <span class="it-text">Klassenarbeit — Training</span>
-          <span class="pnum">S. 48</span>
-        </label>
-      </div>
-        <div class="res">
-          <div class="lead">Ähnlichkeit &amp; Strahlensätze</div>
-        <a class="vid" href="https://www.youtube.com/watch?v=Sm8DnMbQD00" target="_blank" rel="noopener"><span class="play"></span><span class="t">Ähnlichkeit von Dreiecken</span><span class="hub">YouTube</span></a>
-        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/geometrie/" target="_blank" rel="noopener">Geometrie-Playlist: Strahlensatz, zentrisches Strecken</a>
-
-          <div class="serlo-row">
-            <div class="lead">Üben bei Serlo</div>
-          <a class="serlo" href="https://de.serlo.org/mathe/167486/aufgaben-zu-kongruenz-und-aehnlichkeit-von-dreiecken" target="_blank" rel="noopener"><span class="s">SERLO</span>Aufgaben zu Ähnlichkeit von Dreiecken</a>
-          </div>
-        </div>
-    </div></div>
   </div>
   <div class="chapter" data-grade="8" data-chapter="t6" data-count="9">
     <div class="chead">
@@ -987,49 +988,49 @@
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t6a">
           <span class="tick"></span>
           <span class="it-text">Rein quadratische Gleichungen</span>
           <span class="pnum">S. 50</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t6b">
           <span class="tick"></span>
           <span class="it-text">Gleichungen der Form a·x² + b·x = 0</span>
           <span class="pnum">S. 51</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t6c">
           <span class="tick"></span>
           <span class="it-text">Gleichungen der Form a·(x − d)² + e = 0</span>
           <span class="pnum">S. 52</span>
         </label>
-        <label class="item">
+        <label class="item prio-crit">
           <input type="checkbox" data-cb="t6d">
           <span class="tick"></span>
           <span class="it-text">Lösungsformel für quadratische Gleichungen (1)</span>
           <span class="pnum">S. 53</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t6e">
           <span class="tick"></span>
           <span class="it-text">Lösungsformel für quadratische Gleichungen (2)</span>
           <span class="pnum">S. 54</span>
         </label>
-        <label class="item">
+        <label class="item prio-imp">
           <input type="checkbox" data-cb="t6f">
           <span class="tick"></span>
           <span class="it-text">Linearfaktordarstellung quadratischer Funktionen</span>
           <span class="pnum">S. 55</span>
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="t6g">
           <span class="tick"></span>
           <span class="it-text">Bruchgleichungen und quadratische Gleichungen</span>
           <span class="pnum">S. 56</span>
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="t6h">
           <span class="tick"></span>
           <span class="it-text">Quadratische Ungleichungen</span>
@@ -1058,6 +1059,70 @@
         </div>
     </div></div>
   </div>
+  <div class="chapter" data-grade="8" data-chapter="t5" data-count="7">
+    <div class="chead">
+      <div class="roman">V</div>
+      <div class="ctitle"><h3>Strahlensätze</h3><div class="sub">Zentrische Streckung, 1. &amp; 2. Strahlensatz</div></div>
+      <div class="cprog mono" data-cprog="t5">0/7</div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item prio-crit">
+          <input type="checkbox" data-cb="t5a">
+          <span class="tick"></span>
+          <span class="it-text">Vergrößern und Verkleinern – Streckenverhältnis</span>
+          <span class="pnum">S. 42</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t5b">
+          <span class="tick"></span>
+          <span class="it-text">Bruchgleichungen</span>
+          <span class="pnum">S. 42</span>
+        </label>
+        <label class="item prio-imp">
+          <input type="checkbox" data-cb="t5c">
+          <span class="tick"></span>
+          <span class="it-text">Die zentrische Streckung</span>
+          <span class="pnum">S. 43</span>
+        </label>
+        <label class="item prio-crit">
+          <input type="checkbox" data-cb="t5d">
+          <span class="tick"></span>
+          <span class="it-text">Der erste Strahlensatz</span>
+          <span class="pnum">S. 44</span>
+        </label>
+        <label class="item prio-crit">
+          <input type="checkbox" data-cb="t5e">
+          <span class="tick"></span>
+          <span class="it-text">Der zweite Strahlensatz</span>
+          <span class="pnum">S. 45</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t5f">
+          <span class="tick"></span>
+          <span class="it-text">Strahlensätze bei Körpern</span>
+          <span class="pnum">S. 46</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t5T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 48</span>
+        </label>
+      </div>
+        <div class="res">
+          <div class="lead">Ähnlichkeit &amp; Strahlensätze</div>
+        <a class="vid" href="https://www.youtube.com/watch?v=Sm8DnMbQD00" target="_blank" rel="noopener"><span class="play"></span><span class="t">Ähnlichkeit von Dreiecken</span><span class="hub">YouTube</span></a>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/geometrie/" target="_blank" rel="noopener">Geometrie-Playlist: Strahlensatz, zentrisches Strecken</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/167486/aufgaben-zu-kongruenz-und-aehnlichkeit-von-dreiecken" target="_blank" rel="noopener"><span class="s">SERLO</span>Aufgaben zu Ähnlichkeit von Dreiecken</a>
+          </div>
+        </div>
+    </div></div>
+  </div>
   <div class="chapter" data-grade="8" data-chapter="t7" data-count="4">
     <div class="chead">
       <div class="roman">VII</div>
@@ -1067,19 +1132,19 @@
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="t7a">
           <span class="tick"></span>
           <span class="it-text">Lineare Gleichungen mit zwei Variablen</span>
           <span class="pnum">S. 60</span>
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="t7b">
           <span class="tick"></span>
           <span class="it-text">Lineare Gleichungssysteme mit zwei Variablen</span>
           <span class="pnum">S. 61</span>
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="t7c">
           <span class="tick"></span>
           <span class="it-text">Die Lösungsvielfalt von Gleichungssystemen</span>
@@ -1103,6 +1168,75 @@
         </div>
     </div></div>
   </div>
+  <div class="chapter" data-grade="8" data-chapter="t2" data-count="8">
+    <div class="chead">
+      <div class="roman">II</div>
+      <div class="ctitle"><h3>Zufall und Wahrscheinlichkeit</h3><div class="sub">Produkt- &amp; Summenregel, Baumdiagramme, Laplace</div></div>
+      <div class="cprog mono" data-cprog="t2">0/8</div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="cbody"><div class="cbody-inner">
+      <div class="checklist">
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t2a">
+          <span class="tick"></span>
+          <span class="it-text">Zufallsexperimente – Wahrscheinlichkeiten</span>
+          <span class="pnum">S. 17</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t2b">
+          <span class="tick"></span>
+          <span class="it-text">Versuchsreihen ergeben Wahrscheinlichkeiten</span>
+          <span class="pnum">S. 18</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t2c">
+          <span class="tick"></span>
+          <span class="it-text">Mehrstufige Zufallsexperimente – Produktregel</span>
+          <span class="pnum">S. 19</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t2d">
+          <span class="tick"></span>
+          <span class="it-text">Ereignisse – Summenregel</span>
+          <span class="pnum">S. 20</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t2e">
+          <span class="tick"></span>
+          <span class="it-text">Der richtige Blick aufs Baumdiagramm</span>
+          <span class="pnum">S. 21</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t2f">
+          <span class="tick"></span>
+          <span class="it-text">Wahrscheinlichkeit bei Laplace-Experimenten</span>
+          <span class="pnum">S. 22</span>
+        </label>
+        <label class="item prio-low">
+          <input type="checkbox" data-cb="t2g">
+          <span class="tick"></span>
+          <span class="it-text">Kombinatorische Hilfsmittel</span>
+          <span class="pnum">S. 23</span>
+        </label>
+        <label class="item training">
+          <input type="checkbox" data-cb="t2T">
+          <span class="tick"></span>
+          <span class="it-text">Klassenarbeit — Training</span>
+          <span class="pnum">S. 24</span>
+        </label>
+      </div>
+        <div class="res">
+          <div class="lead">Wahrscheinlichkeit &amp; Baumdiagramme</div>
+        <a class="playlist-link" href="https://www.lehrer-schmidt.de/mathematik/daten-und-zufall-wahrscheinlichkeit/" target="_blank" rel="noopener">Playlist „Daten und Zufall – Wahrscheinlichkeit“</a>
+
+          <div class="serlo-row">
+            <div class="lead">Üben bei Serlo</div>
+          <a class="serlo" href="https://de.serlo.org/mathe/16365/berechnung-von-wahrscheinlichkeiten" target="_blank" rel="noopener"><span class="s">SERLO</span>Berechnung von Wahrscheinlichkeiten</a>
+          </div>
+        </div>
+    </div></div>
+  </div>
 
   <div class="part">
     <span class="idx">v.3</span>
@@ -1118,37 +1252,37 @@
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n1a">
           <span class="tick"></span>
           <span class="it-text">Potenzen mit ganzen Hochzahlen</span>
           
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n1b">
           <span class="tick"></span>
           <span class="it-text">Potenzen mit gleichen Grundzahlen</span>
           
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n1c">
           <span class="tick"></span>
           <span class="it-text">Potenzen mit gleichen Hochzahlen</span>
           
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n1d">
           <span class="tick"></span>
           <span class="it-text">Potenzen potenzieren</span>
           
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n1e">
           <span class="tick"></span>
           <span class="it-text">Potenzen mit rationalen Hochzahlen</span>
           
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n1f">
           <span class="tick"></span>
           <span class="it-text">Potenz- und Wurzelgleichungen lösen</span>
@@ -1182,19 +1316,19 @@
     </div>
     <div class="cbody"><div class="cbody-inner">
       <div class="checklist">
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n2a">
           <span class="tick"></span>
           <span class="it-text">Dreiecke auf Kongruenz prüfen</span>
           
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n2b">
           <span class="tick"></span>
           <span class="it-text">Mit Kongruenzsätzen beweisen</span>
           
         </label>
-        <label class="item">
+        <label class="item prio-low">
           <input type="checkbox" data-cb="n2c">
           <span class="tick"></span>
           <span class="it-text">Vielecke auf Ähnlichkeit untersuchen</span>
