@@ -23,6 +23,9 @@
     --line:#ddd7cb;
     --rost:#c56b54;
     --rost-deep:#a9553f;
+    --amber:#c98a34;
+    --amber-deep:#a97120;
+    --gray:#9e958a;
     --sage:#8b9a82;
     --sage-deep:#5f6e57;
     --shadow:rgba(35,34,32,.07);
@@ -181,6 +184,42 @@
   }
   .depmap .dm-crit rect{fill:var(--rost);stroke:var(--rost-deep);stroke-width:.5}
   .depmap .dm-imp rect{fill:#c98a34;stroke:#a97120;stroke-width:.5}
+
+  /* bottom cross-year map */
+  .depmap2{
+    margin:48px 0 10px;padding:20px 16px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+  }
+  .depmap2 figcaption{margin:0 4px 14px}
+  .depmap2 .dm-title{
+    display:block;font-family:'Fraunces',serif;
+    font-size:19px;color:var(--ink);
+  }
+  .depmap2 .dm-title em{font-style:italic;color:var(--rost)}
+  .depmap2 .dm-sub{
+    display:block;font-size:13px;
+    color:var(--ink-soft);margin-top:4px;max-width:56ch;
+  }
+  .depmap2 svg{width:100%;height:auto;display:block}
+  .depmap2 .th{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:var(--card)}
+  .depmap2 .thd{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;fill:var(--ink-soft)}
+  .depmap2 .ts{font-family:'Space Grotesk',sans-serif;font-size:10.5px;fill:var(--card);opacity:.9}
+  .depmap2 .nl{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;fill:var(--ink)}
+  .depmap2 .lg{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--ink-soft)}
+  .depmap2 .g9box rect{fill:var(--paper);stroke:var(--line);stroke-width:1.2}
+  .depmap2 .note{margin-top:20px;font-size:14px;color:var(--ink-soft)}
+  .depmap2 .note b{color:var(--ink);font-weight:600}
+  .depmap2 .note ul{margin:10px 0 0 2px;list-style:none}
+  .depmap2 .note li{padding:5px 0 5px 20px;position:relative}
+  .depmap2 .note li::before{
+    content:"";position:absolute;left:0;top:11px;
+    width:9px;height:9px;border-radius:2px;
+  }
+  .depmap2 .note li.crit::before{background:var(--rost)}
+  .depmap2 .note li.imp::before{background:#c98a34}
+  .depmap2 .note li.low::before{background:#9e958a}
 
   .part{
     display:flex;align-items:baseline;
@@ -1355,6 +1394,111 @@
         </div>
     </div></div>
   </div>
+
+  <figure class="depmap2">
+    <figcaption>
+      <span class="dm-title">Und wohin es führt — <em>Klasse 9</em></span>
+      <span class="dm-sub">Dieselbe Logik, eine Ebene weiter: Links die Themen aus Klasse 8, rechts die Kapitel aus Klasse 9. Jede Linie zeigt, worauf ein Kapitel aufbaut.</span>
+    </figcaption>
+<svg viewBox="0 0 760 640" role="img" aria-label="Querverweis-Karte: Themen aus Klasse 8 links speisen die Kapitel aus Klasse 9 rechts. Wurzelrechnung und Terme/Gleichungen sind kritisch und speisen die meisten Kapitel.">
+      <defs>
+        <marker id="a9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 2L8 5L2 8" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      </defs>
+
+      <text class="thd" x="24" y="22">KLASSE 8</text>
+      <text class="thd" x="556" y="22">KLASSE 9</text>
+
+      <!-- LINKS drawn first so boxes sit on top -->
+      <!-- Wurzeln (y=67) -> I(63) IV(213) V(263) VII(363) -->
+      <path d="M236 60 C420 55 380 63 526 63" fill="none" stroke="var(--rost)" stroke-width="2" opacity=".9" marker-end="url(#a9)"/>
+      <path d="M236 66 C430 130 380 213 526 213" fill="none" stroke="var(--rost)" stroke-width="2" opacity=".75" marker-end="url(#a9)"/>
+      <path d="M236 72 C430 210 380 263 526 263" fill="none" stroke="var(--rost)" stroke-width="2" opacity=".75" marker-end="url(#a9)"/>
+      <path d="M236 80 C440 300 380 363 526 363" fill="none" stroke="var(--rost)" stroke-width="2" opacity=".75" marker-end="url(#a9)"/>
+
+      <!-- Terme (y=133) -> I(72) III(163) IV(222) -->
+      <path d="M236 126 C420 110 380 72 526 72" fill="none" stroke="var(--rost)" stroke-width="1.8" opacity=".5" marker-end="url(#a9)"/>
+      <path d="M236 133 C420 155 380 163 526 163" fill="none" stroke="var(--rost)" stroke-width="1.8" opacity=".6" marker-end="url(#a9)"/>
+      <path d="M236 140 C430 215 390 222 526 222" fill="none" stroke="var(--rost)" stroke-width="1.8" opacity=".5" marker-end="url(#a9)"/>
+
+      <!-- Quadr Funktionen (y=199) -> III(158) -->
+      <path d="M236 199 C410 180 390 158 526 158" fill="none" stroke="var(--rost)" stroke-width="2" opacity=".9" marker-end="url(#a9)"/>
+
+      <!-- Strahlensätze (y=265) -> II(118) IV(208) -->
+      <path d="M236 262 C410 210 410 118 526 118" fill="none" stroke="var(--rost)" stroke-width="2" opacity=".8" marker-end="url(#a9)"/>
+      <path d="M236 268 C410 245 410 208 526 208" fill="none" stroke="var(--rost)" stroke-width="2" opacity=".8" marker-end="url(#a9)"/>
+
+      <!-- Quadr Gleichungen (y=326) -> I(78) III(168) -->
+      <path d="M236 324 C410 260 410 82 526 80" fill="none" stroke="var(--amber)" stroke-width="1.6" opacity=".6" marker-end="url(#a9)"/>
+      <path d="M236 330 C410 290 410 170 526 170" fill="none" stroke="var(--amber)" stroke-width="1.6" opacity=".6" marker-end="url(#a9)"/>
+
+      <!-- Winkelsätze (y=386) -> II(123) IV(216) -->
+      <path d="M236 384 C410 305 410 123 526 123" fill="none" stroke="var(--amber)" stroke-width="1.6" opacity=".6" marker-end="url(#a9)"/>
+      <path d="M236 390 C410 330 410 216 526 216" fill="none" stroke="var(--amber)" stroke-width="1.6" opacity=".6" marker-end="url(#a9)"/>
+
+      <!-- Wahrscheinlichkeit (y=446) -> VI(308) -->
+      <path d="M236 446 C410 405 410 308 526 308" fill="none" stroke="var(--amber)" stroke-width="1.6" opacity=".7" marker-end="url(#a9)"/>
+
+      <!-- Flächen/Umfang (y=506) -> V(268) VII(368) -->
+      <path d="M236 504 C410 405 410 268 526 268" fill="none" stroke="var(--gray)" stroke-width="1.5" opacity=".6" marker-end="url(#a9)"/>
+      <path d="M236 511 C430 470 430 368 526 368" fill="none" stroke="var(--gray)" stroke-width="1.5" opacity=".6" marker-end="url(#a9)"/>
+
+      <!-- LGS (y=566) -> VI(313) weak -->
+      <path d="M236 564 C420 520 430 315 526 315" fill="none" stroke="var(--gray)" stroke-width="1.5" opacity=".4" stroke-dasharray="4 3" marker-end="url(#a9)"/>
+
+      <!-- ===== LEFT boxes ===== -->
+      <g><rect x="24" y="44" width="212" height="46" rx="9" fill="var(--rost)" stroke="var(--rost-deep)" stroke-width=".5"/>
+        <text class="th" x="130" y="62" text-anchor="middle">Reelle Zahlen · Wurzeln</text>
+        <text class="ts" x="130" y="79" text-anchor="middle">speist 4 Kapitel — #1</text></g>
+      <g><rect x="24" y="110" width="212" height="46" rx="9" fill="var(--rost)" stroke="var(--rost-deep)" stroke-width=".5"/>
+        <text class="th" x="130" y="128" text-anchor="middle">Terme &amp; Gleichungen lösen</text>
+        <text class="ts" x="130" y="145" text-anchor="middle">äquiv. Umformen — überall</text></g>
+      <g><rect x="24" y="176" width="212" height="46" rx="9" fill="var(--rost)" stroke="var(--rost-deep)" stroke-width=".5"/>
+        <text class="th" x="130" y="194" text-anchor="middle">Quadratische Funktionen</text>
+        <text class="ts" x="130" y="211" text-anchor="middle">Parabeln, f(x)</text></g>
+      <g><rect x="24" y="242" width="212" height="46" rx="9" fill="var(--rost)" stroke="var(--rost-deep)" stroke-width=".5"/>
+        <text class="th" x="130" y="260" text-anchor="middle">Strahlensätze · Ähnlichkeit</text>
+        <text class="ts" x="130" y="277" text-anchor="middle">Seitenverhältnisse</text></g>
+      <g><rect x="24" y="308" width="212" height="40" rx="9" fill="var(--amber)" stroke="var(--amber-deep)" stroke-width=".5"/>
+        <text class="th" x="130" y="328" text-anchor="middle">Quadratische Gleichungen</text></g>
+      <g><rect x="24" y="368" width="212" height="40" rx="9" fill="var(--amber)" stroke="var(--amber-deep)" stroke-width=".5"/>
+        <text class="th" x="130" y="388" text-anchor="middle">Winkelsätze (Vorstufe)</text></g>
+      <g><rect x="24" y="428" width="212" height="40" rx="9" fill="var(--amber)" stroke="var(--amber-deep)" stroke-width=".5"/>
+        <text class="th" x="130" y="448" text-anchor="middle">Zufall &amp; Wahrscheinlichkeit</text></g>
+      <g><rect x="24" y="488" width="212" height="40" rx="9" fill="var(--gray)" stroke-width=".5"/>
+        <text class="th" x="130" y="508" text-anchor="middle">Flächen &amp; Umfang (Vorstufe)</text></g>
+      <g><rect x="24" y="548" width="212" height="40" rx="9" fill="var(--gray)" stroke-width=".5"/>
+        <text class="th" x="130" y="568" text-anchor="middle">Lineare Gleichungssysteme</text></g>
+
+      <!-- ===== RIGHT boxes ===== -->
+      <g class="g9box"><rect x="526" y="44" width="210" height="38" rx="8"/><text class="nl" x="631" y="64" text-anchor="middle">I · Potenzen</text></g>
+      <g class="g9box"><rect x="526" y="94" width="210" height="38" rx="8"/><text class="nl" x="631" y="114" text-anchor="middle">II · Kongruenz &amp; Ähnlichkeit</text></g>
+      <g class="g9box"><rect x="526" y="144" width="210" height="38" rx="8"/><text class="nl" x="631" y="164" text-anchor="middle">III · Potenz-/Exp.funktionen</text></g>
+      <g class="g9box"><rect x="526" y="194" width="210" height="38" rx="8"/><text class="nl" x="631" y="214" text-anchor="middle">IV · Trigonometrie</text></g>
+      <g class="g9box"><rect x="526" y="244" width="210" height="38" rx="8"/><text class="nl" x="631" y="264" text-anchor="middle">V · Kreise</text></g>
+      <g class="g9box"><rect x="526" y="294" width="210" height="38" rx="8"/><text class="nl" x="631" y="314" text-anchor="middle">VI · Wahrscheinlichkeit</text></g>
+      <g class="g9box"><rect x="526" y="344" width="210" height="38" rx="8"/><text class="nl" x="631" y="364" text-anchor="middle">VII · Körper</text></g>
+
+      <!-- legend -->
+      <text class="thd" x="24" y="600">WICHTIGKEIT (LINKE THEMEN)</text>
+      <rect x="290" y="590" width="13" height="13" rx="3" fill="var(--rost)"/>
+      <text class="lg" x="309" y="600">speist viele</text>
+      <rect x="410" y="590" width="13" height="13" rx="3" fill="var(--amber)"/>
+      <text class="lg" x="429" y="600">einige</text>
+      <rect x="500" y="590" width="13" height="13" rx="3" fill="var(--gray)"/>
+      <text class="lg" x="519" y="600">wenige / später</text>
+    </svg>
+    <div class="note">
+    <b>Wie man das liest — die stärksten Fäden:</b>
+    <ul>
+      <li class="crit"><b>Wurzeln</b> tragen vier Kapitel: Potenzen (rationale Hochzahlen sind Wurzeln), Trigonometrie &amp; Kreise &amp; Körper (Längen, Radien, Volumina brauchen Wurzeln). Darum #1.</li>
+      <li class="crit"><b>Terme &amp; Gleichungen lösen</b> stecken unter fast jedem Kapitel — Potenz-, Wurzel-, Exponentialgleichungen, Formeln nach einer Größe auflösen.</li>
+      <li class="crit"><b>Quadratische Funktionen</b> führen direkt zu Potenz- und Exponentialfunktionen (das f(x)-Kapitel).</li>
+      <li class="crit"><b>Strahlensätze / Ähnlichkeit</b> speisen Kongruenz — und, wichtig: die Trigonometrie, denn sin/cos/tan sind Seitenverhältnisse ähnlicher Dreiecke.</li>
+      <li class="imp"><b>Winkelsätze</b> &amp; <b>quadratische Gleichungen</b> stützen jeweils zwei Kapitel.</li>
+      <li class="low"><b>Wahrscheinlichkeit, Flächen/Umfang, LGS</b> speisen je ein Kapitel (bzw. schwach) — später dran, wenn Zeit knapp ist.</li>
+    </ul>
+  </div>
+  </figure>
 
   <footer>
     <div class="colophon">
